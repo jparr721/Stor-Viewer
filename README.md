@@ -2,7 +2,7 @@
 
 ## Welcome to Badmeat!
 
-Badmeat is a food management and e-pantry app that will allow you to quickly, and easily allow you to manage food purchases. Scan your reciept from any major grocery store and watch as your purchased items automatically populate into the list. Once your items are in the list, the app will automagically track their expiration date, and as it gets close to said date you will recieve push alert warnings and recipe ideas with the expiring ingredients so none are wasted.
+Badmeat is a food management and e-pantry app that will allow you to quickly, and easily manage food purchases. Scan your reciept from any major grocery store and watch as your purchased items automatically populate into the list. Once your items are in the list, the app will automagically track their expiration date, and as it gets close to said date you will recieve push alert warnings and recipe ideas with the expiring ingredients so none are wasted.
 
 # Goals
 - The app is going to be natively programmed to both of the main mobile operating systems (Android, iOS).
