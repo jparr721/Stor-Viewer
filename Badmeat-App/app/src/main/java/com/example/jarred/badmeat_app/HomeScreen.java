@@ -1,5 +1,6 @@
 package com.example.jarred.badmeat_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -98,4 +99,16 @@ public class HomeScreen extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /**
+     * Move to the List Screen to see shopping lists
+     */
+
+    public void gotoListScreen(View view){
+
+        Intent listPage = new Intent(HomeScreen.this, ListScreen.class);
+        startActivity(listPage);
+    }
 }
+
+
