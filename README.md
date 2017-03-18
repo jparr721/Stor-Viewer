@@ -11,8 +11,8 @@ Badmeat is a food management and e-pantry app that will allow you to quickly, an
 # TODO's
 - [x] Set up github for team access
 - [x] Create a template android project (hello world)
-- [ ] Have everyone pull the repo and successfully build the template app in their local IDE
-- [ ] Remove "hello world" implementation and create a simple core app (multiple blank screens + navigation)
+- [x] Have everyone pull the repo and successfully build the template app in their local IDE
+- [x] Remove "hello world" implementation and create a simple core app (multiple blank screens + navigation)
 - [ ] Push to repo; have team pull and build
 - [ ] Team members begin to "sign up" for screens to develop
 - [ ] Add components and mock elements
