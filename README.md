@@ -16,3 +16,5 @@ Badmeat is a food management and e-pantry app that will allow you to quickly, an
 - [ ] Push to repo; have team pull and build
 - [ ] Team members begin to "sign up" for screens to develop
 - [ ] Add components and mock elements
+
+For developers: Please message the group before pushing changes to make sure we can avoid merge conflicts.
