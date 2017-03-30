@@ -15,23 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainLogin"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".Home_Screen"
             android:label="@string/title_activity_home__screen"
-            android:parentActivityName=".MainLogin"
+            android:parentActivityName=".Login"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="badmeat.badmeat_android.MainLogin" />
+                android:value="badmeat.badmeat_android.Login" />
         </activity>
+       <activity
+           android:name=".Login"
+           android:label="Login">
+           <intent-filter >
+               <action android:name="android.intent.action.MAIN" />
+               <category android:name="android.intent.category.LAUNCHER" />
+           </intent-filter>
+       </activity>
+
     </application>
 
 </manifest>
