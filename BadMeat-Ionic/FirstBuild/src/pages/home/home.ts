@@ -6,9 +6,14 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  foodCount: number;
 
   constructor(public navCtrl: NavController) {
 
   }
 
+
+  manageFoodCount(foodCount) {
+   //Code to manage food added to item list
+  }
 }
