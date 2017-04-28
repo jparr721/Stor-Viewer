@@ -21,14 +21,14 @@ export class LoginPage {
   private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
 
   public createAccount() {
-    this.navCtrl.push('RegisterPage');
+    this.navCtrl.push('RegisterPage'); //Promise ignored error
   }
 
   public login() {
     this.showLoading();
     this.auth.login(this.registerCredentials).subscribe(allowed => {
         if (allowed) {
-          this.navCtrl.setRoot('HomePage');
+          this.navCtrl.setRoot('HomePage'); //Promise ignored error
         } else {
           this.showError("Access Denied");
         }
@@ -43,17 +43,17 @@ export class LoginPage {
       content: 'Please wait...',
       dismissOnPageChange: true
     });
-    this.loading.present();
+    this.loading.present(); //Promise ignored error
   }
 
   showError(text) {
-    this.loading.dismiss();
+    this.loading.dismiss(); //Promise ignored error
 
     let alert = this.alertCtrl.create({
       title: 'Fail',
       subTitle: text,
       buttons: ['OK']
     });
-    alert.present(prompt);
+    alert.present(prompt); //Promise ignored error
   }
 }
