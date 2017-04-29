@@ -1,7 +1,7 @@
 page-login {
 
   .login-content {
-    background: linear-gradient(#9dd2ea, #8bceec);
+    background: #ff9fa8;
 
     .logo-row {
       padding-top: 50px;
@@ -9,7 +9,9 @@ page-login {
     }
 
     .login-box {
-      background: #399F8B;
+      border-radius: 10px;
+      box-shadow: 0 4px #737373;
+      background: #c8c8c8;
       padding: 20px 20px 0px 20px;
       margin-top: 30px;
     }
@@ -40,7 +42,7 @@ page-login {
     }
 
     .submit-btn {
-      background: #51CFB1;
+      background: #7252cf;
       border-radius: 30px !important;
       border: 1px solid #ffffff;
     }
@@ -49,6 +51,12 @@ page-login {
       color: #ffffff;
       font-size: 0.8em;
     }
+  }
+
+  h1 {
+    color: #7252cf;
+    -webkit-text-stroke: 1px #4c4897;
+    font-size: 36px;
   }
 
 }
