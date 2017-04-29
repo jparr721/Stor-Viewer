@@ -51,7 +51,7 @@ export class AuthService {
     }
   }
 
-  public getUserInfor() : User {
+  public getUserInfo() : User {
     return this.currentUser;
   }
 
@@ -64,7 +64,7 @@ export class AuthService {
 
   }
 
-  constructor(publichttp: Http) {
+  constructor(public http: Http) {
     console.log('Hello AuthService Provider');
   }
 

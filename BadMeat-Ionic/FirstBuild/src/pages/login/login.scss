@@ -1,7 +1,7 @@
 page-login {
 
   .login-content {
-    background: #ff9fa8;
+    background-color: rgba(0, 204, 255, 0.3);
 
     .logo-row {
       padding-top: 50px;
@@ -54,6 +54,7 @@ page-login {
   }
 
   h1 {
+    font-family: "Century Gothic" , CenturyGothic, Geneva, AppleGothic, sans-serif;
     color: #7252cf;
     -webkit-text-stroke: 1px #4c4897;
     font-size: 36px;

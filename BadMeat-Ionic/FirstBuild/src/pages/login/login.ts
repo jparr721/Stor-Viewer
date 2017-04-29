@@ -17,17 +17,9 @@ export class LoginPage {
   loading: Loading;
   registerCredentials = { email: '', password: ''};
 
+
   constructor(public navCtrl: NavController, private auth: AuthService, public navParams: NavParams,
   private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
-
-
-  /** Just for the sake of working on the rest of the app
-   * I am going to throw this function in here to test moving between
-   * the login screen and the home page.
-   */
-  transitionToHome(){
-
-  }
 
   public createAccount() {
     this.navCtrl.push('RegisterPage'); //Promise ignored error
@@ -65,6 +57,5 @@ export class LoginPage {
     });
     alert.present(prompt); //Promise ignored error
   }
-
 
 }
