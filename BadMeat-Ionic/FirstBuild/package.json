@@ -1,7 +1,7 @@
 {
-  "name": "ionic-hello-world",
+  "name": "BadMeat",
   "version": "0.0.0",
-  "author": "Ionic Framework",
+  "author": "Jarred Parr",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -50,5 +50,5 @@
       "locator": "ios"
     }
   ],
-  "description": "FirstBuild: An Ionic project"
+  "description": "A beautiful food management application"
 }

@@ -22,14 +22,18 @@ export class LoginPage {
   private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
 
   public createAccount() {
-    this.navCtrl.push('RegisterPage'); //Promise ignored error
+    this.navCtrl.push('RegisterPage').then().catch(exception => {
+      console.log('Exception ' + exception);
+    }); //Promise ignored error
   }
 
   public login() {
     this.showLoading();
     this.auth.login(this.registerCredentials).subscribe(allowed => {
         if (allowed) {
-          this.navCtrl.setRoot('TabsPage'); //Promise ignored error
+          this.navCtrl.setRoot('TabsPage').then().catch(exception => {
+            console.log('Exeption ' + exception);
+          });//Promise ignored error
         } else {
           this.showError("Access Denied");
         }
@@ -44,18 +48,24 @@ export class LoginPage {
       content: 'Please wait...',
       dismissOnPageChange: true
     });
-    this.loading.present(); //Promise ignored error
+    this.loading.present().then().catch(exception => {
+      console.log('Exception ' + exception);
+    }); //Promise ignored error
   }
 
   showError(text) {
-    this.loading.dismiss(); //Promise ignored error
+    this.loading.dismiss().then().catch(exception => {
+      console.log('Exception ' + exception);
+    }); //Promise ignored error
 
     let alert = this.alertCtrl.create({
       title: 'Fail',
       subTitle: text,
       buttons: ['OK']
     });
-    alert.present(prompt); //Promise ignored error
+    alert.present(prompt).then().catch(exception => {
+      console.log('Exception ' + exception);
+    }); //Promise ignored error
   }
 
 }
