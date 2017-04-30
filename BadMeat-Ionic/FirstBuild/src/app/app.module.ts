@@ -11,22 +11,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
-// Import AF2 Module
-import { AngularFireModule } from 'angularfire2';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {AuthService} from "../providers/auth-service";
 
-export const firebaseConfig = {
-  piKey: "AIzaSyA_HwMuGA-b4v9Eb1zpuw1AWhsHq3HJwgo",
-  authDomain: "badmeat-eb028.firebaseapp.com",
-  databaseURL: "https://badmeat-eb028.firebaseio.com",
-  projectId: "badmeat-eb028",
-  storageBucket: "badmeat-eb028.appspot.com",
-  messagingSenderId: "357633371839"
-};
-AngularFireModule.initializeApp(firebaseConfig);
 
 
 @NgModule({
@@ -44,7 +34,6 @@ AngularFireModule.initializeApp(firebaseConfig);
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

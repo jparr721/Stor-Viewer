@@ -31,7 +31,7 @@ export class LoginPage {
     this.showLoading();
     this.auth.login(this.registerCredentials).subscribe(allowed => {
         if (allowed) {
-          this.navCtrl.setRoot('TabsPage').then().catch(exception => {
+          this.navCtrl.setRoot('home.html').then().catch(exception => {
             console.log('Exeption ' + exception);
           });//Promise ignored error
         } else {
