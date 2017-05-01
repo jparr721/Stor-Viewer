@@ -20,6 +20,7 @@ export class TabsPage {
   email = '';
 
   constructor(private nav: NavController, private auth: AuthService) {
+   /**
     let info = this.auth.getUserInfo();
     this.username = info['name'];
     this.email = info['email'];
@@ -59,4 +60,6 @@ export class TabsPage {
       });
     });
   }
+    **/
+}
 }
