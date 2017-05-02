@@ -23,7 +23,8 @@ export class HomePage {
     }
   }
 
-  goToAccount() {
+  //TODO - Turn this into the recipe page.
+  goToRecipes() {
     this.navCtrl.push(AccountPage);
   }
 
