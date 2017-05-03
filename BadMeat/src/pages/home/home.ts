@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AccountPage} from "../account-page/account-page";
+import {RecipePage} from "../recipe-page/recipe-page";
 
 @Component({
   selector: 'page-home',
@@ -23,9 +24,17 @@ export class HomePage {
     }
   }
 
+  showAccountPage() {
+    this.navCtrl.push(AccountPage);
+  }
+
   //TODO - Turn this into the recipe page.
   goToRecipes() {
-    this.navCtrl.push(AccountPage);
+    this.navCtrl.push(RecipePage);
+  }
+
+  loadFoodPage(){
+
   }
 
 }
