@@ -14,5 +14,8 @@
 
 
 <ion-content padding>
-
+  <h3>Recipes</h3>
+  <div *ngFor="let foodItems of foodItem">
+    <h3>{{foodItems.title}}</h3>
+  </div>
 </ion-content>

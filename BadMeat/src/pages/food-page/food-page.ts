@@ -15,6 +15,8 @@ import { RecipeProvider } from "../../providers/recipe-provider";
 })
 export class FoodPage {
   isFoodExpiring: boolean;
+  Badmeat: any; //Specifies which food you want, hopefully
+  foodItem:IrecipeLayout[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private recipeProvider: RecipeProvider) {
@@ -25,13 +27,18 @@ export class FoodPage {
   }
 
   loadFoodItems() {
+    this.Badmeat = "chicken";
     if (this.isFoodExpiring){
-      this.recipeProvider.getRecipes().subscribe()
+      this.recipeProvider.getRecipes(this.Badmeat).subscribe(foodItem => {
+        this.foodItem = foodItem;
+      });
     }
   }
 
 }
 
 interface IrecipeLayout {
-
+  id: number;
+  title: string;
+  body: string;
 }
