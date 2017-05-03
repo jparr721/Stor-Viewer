@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AccountPage} from "../account-page/account-page";
 import {RecipePage} from "../recipe-page/recipe-page";
+import {FoodPage} from "../food-page/food-page";
 
 @Component({
   selector: 'page-home',
@@ -34,7 +35,7 @@ export class HomePage {
   }
 
   loadFoodPage(){
-
+    this.navCtrl.push(FoodPage);
   }
 
 }

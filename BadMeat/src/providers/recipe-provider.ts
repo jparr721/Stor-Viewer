@@ -10,9 +10,18 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class RecipeProvider {
+  foodItem: string;
+  apiKey: any;
+  TitleKey: any;
+  url: any;
 
   constructor(public http: Http) {
     console.log('Hello RecipeProvider Provider');
   }
+
+  getRecipes() {
+
+  }
+
 
 }

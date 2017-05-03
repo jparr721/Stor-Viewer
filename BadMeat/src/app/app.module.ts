@@ -14,6 +14,7 @@ import { AccountPage } from "../pages/account-page/account-page";
 import { AddItemPage } from "../pages/add-item-page/add-item-page";
 import { ListsPage } from "../pages/lists-page/lists-page";
 import { RecipePage } from "../pages/recipe-page/recipe-page";
+import { FoodPage } from "../pages/food-page/food-page";
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -41,7 +42,8 @@ const config = {
     AccountPage,
     AddItemPage,
     ListsPage,
-    RecipePage
+    RecipePage,
+    FoodPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ const config = {
     AccountPage,
     AddItemPage,
     ListsPage,
-    RecipePage
+    RecipePage,
+    FoodPage
   ],
   providers: [
     StatusBar,
