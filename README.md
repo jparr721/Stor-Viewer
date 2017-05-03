@@ -18,3 +18,6 @@ Badmeat is a food management and e-pantry app that will allow you to quickly, an
 - [ ] Connect to databse for authentication and user account management
 
 For developers: Please message the group before pushing changes to the master branch to make sure we can avoid merge conflicts.
+
+
+*A Mvjn Software Collective Product*
