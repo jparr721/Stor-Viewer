@@ -13,6 +13,12 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <h1>Test Posts</h1>
+  <div *ngFor="let items of foodItem">
+    <h1>{{items.title}}</h1>
+    <p>{{items.body}}</p>
+  </div>
 
 </ion-content>

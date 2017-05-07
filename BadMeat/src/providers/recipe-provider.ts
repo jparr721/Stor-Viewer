@@ -15,9 +15,19 @@ export class RecipeProvider {
   apiId: any;
   TitleKey: any;
   url: any;
+  providers: [Http]
 
   constructor(public http: Http) {
     console.log('Hello RecipeProvider Provider');
+  }
+
+
+  /**
+   * Test Query service using JSON placeholder
+   */
+  testQuery() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+      .map(res => res.json());
   }
 
   getRecipes(query) {

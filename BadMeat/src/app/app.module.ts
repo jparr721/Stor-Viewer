@@ -15,6 +15,7 @@ import { AddItemPage } from "../pages/add-item-page/add-item-page";
 import { ListsPage } from "../pages/lists-page/lists-page";
 import { RecipePage } from "../pages/recipe-page/recipe-page";
 import { FoodPage } from "../pages/food-page/food-page";
+import {HttpModule} from "@angular/http";
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -49,7 +50,8 @@ const config = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    [HttpModule]
 
   ],
   bootstrap: [IonicApp],
