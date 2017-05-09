@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cf34fd7-143a-42b0-91a7-7d41de58c306" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BadMeat/src/pages/food-page/food-page.html" afterPath="$PROJECT_DIR$/BadMeat/src/pages/food-page/food-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BadMeat/src/pages/food-page/food-page.ts" afterPath="$PROJECT_DIR$/BadMeat/src/pages/food-page/food-page.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BadMeat/src/pages/lists-page/lists-page.html" afterPath="$PROJECT_DIR$/BadMeat/src/pages/lists-page/lists-page.html" />
-    </list>
+    <list default="true" id="3cf34fd7-143a-42b0-91a7-7d41de58c306" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -383,16 +378,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494128932822</updated>
-      <workItem from="1494128934041" duration="4567000" />
+      <workItem from="1494128934041" duration="5161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4567000" />
+    <option name="totallyTimeSpent" value="5161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1048" height="1047" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
