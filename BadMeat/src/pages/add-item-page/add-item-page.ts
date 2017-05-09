@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ScanCodePage} from "../scan-code-page/scan-code-page";
 
 /**
  * Generated class for the AddItemPage page.
@@ -14,11 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddItemPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddItemPage');
+
   }
 
+
+  /**
+   * Load the scanner to get the barcodes
+   */
+  loadScanner() {
+    this.navCtrl.push(ScanCodePage)
+  }
 }
