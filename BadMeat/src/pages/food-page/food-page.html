@@ -13,9 +13,29 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h3>Recipes</h3>
-  <div *ngFor="let foodItems of foodItem">
-    <h3>{{foodItems.title}}</h3>
-  </div>
+<ion-content class="outer-content">
+  <ion-list>
+    <ion-item-divider color="light">A</ion-item-divider>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Apples</h2>
+        <p>INSERT TIME AND QUANTITY</p>
+      </ion-item>
+      <ion-item>
+        <h2>Apricot</h2>
+        <p>INSERT TIME AND QUANTITY</p>
+      </ion-item>
+      <ion-item>
+        <h2>Apple-Orange</h2>
+        <p>INSERT TIME AND QUANTITY</p>
+      </ion-item>
+    </ion-item-sliding>
+    <ion-item-divider color="light">B</ion-item-divider>
+    <ion-item-divider color="light">C</ion-item-divider>
+    <ion-item-divider color="light">D</ion-item-divider>
+    <ion-item-divider color="light">E</ion-item-divider>
+    <ion-item-divider color="light">F</ion-item-divider>
+
+  </ion-list>
+
 </ion-content>

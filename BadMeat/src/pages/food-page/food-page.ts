@@ -12,10 +12,10 @@ import { RecipeProvider } from "../../providers/recipe-provider";
   selector: 'page-food-page',
   templateUrl: 'food-page.html',
   providers: [RecipeProvider]
-
 })
 export class FoodPage {
   isFoodExpiring: boolean;
+  posts: Post[];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -27,6 +27,13 @@ export class FoodPage {
   }
 
 
+
+}
+
+interface Post {
+  id: number;
+  title: string;
+  body: string;
 }
 
 
