@@ -17,7 +17,7 @@ export class RecipeProvider {
   url: any;
   providers: [Http]
 
-  constructor(public http: Http) {
+  constructor(public http: Http ) {
     console.log('Hello RecipeProvider Provider');
   }
 
