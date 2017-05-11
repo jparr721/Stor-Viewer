@@ -15,5 +15,20 @@
 
 <ion-content>
 
+  <ion-list>
+    <ion-item>
+      Add a new shopping list
+      <button (click)="addList()" ion-button item-end outline>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item>
+      Add a new food item to inventory
+      <button (click)="addFood()" ion-button item-end outline>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

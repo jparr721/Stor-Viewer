@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular'
 import { BarcodeScanner } from  'ionic-native'
-import { ListsPage } from '../lists-page/lists-page';
+//import { ListsPage } from '../lists-page/lists-page';
 
 
 /**
@@ -37,6 +37,7 @@ export class ScanCodePage {
     this.buttonText = "Loading..";
     this.isLoading = true;
 
+    /**
     this.barcodeScan.scan().then((barcodeData) => {
       if (barcodeData.cancelled){
         console.log("Use has cancelled the action.");
@@ -54,5 +55,8 @@ export class ScanCodePage {
     this.navCtrl.push(ListsPage, {
       scannedItems: barcodeData.text
     });
+  }
+
+     **/
   }
 }
