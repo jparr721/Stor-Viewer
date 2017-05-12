@@ -63,6 +63,7 @@ export class AddItemPage {
           text: 'Save List',
           handler: data => {
             console.log('Save initiated');
+            this.listItems.push(data);
             this.isSaveClicked = true;
           }
         }
@@ -70,6 +71,33 @@ export class AddItemPage {
     });
     prompt.present();
 
+  }
+
+  addToList(item){
+
+    let prompt = this.alertCtrl.create({
+      title: 'Add to list',
+      inputs: [{
+        name: 'title'
+      }],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            let index = this.listItems.indexOf(item);
+
+            if (index > -1){
+              this.listItems[index] = data;
+            } else {
+              throw new Error("Error, index out of bounds");
+            }
+          }
+        }
+      ]
+    })
   }
 
   saveClicked() {

@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import {AddItemPage} from "../add-item-page/add-item-page";
+
 
 
 /**
@@ -8,26 +10,6 @@ import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-an
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@Component({
-  templateUrl: 'popover.html',
-})
-export class PopoverPage {
-  listTitle: string;
-  listItems: string[];
-  description: string;
-  foodName: string;
-  quantity: number;
-  isSaveClicked: boolean;
-
-  constructor(private navParams: NavParams){
-
-  }
-
-  saveList() {
-
-  }
-}
-
 
 @IonicPage()
 @Component({
@@ -43,10 +25,9 @@ export class ListsPage {
     console.log('ionViewDidLoad ListsPage');
   }
 
-
-  presentPopover(ev){
-    let popover = this.popCtrl.create(PopoverPage, {
-
-    })
+  addList() {
+    this.navCtrl.push(AddItemPage);
   }
+
+
 }

@@ -7,6 +7,7 @@ import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { AngularFireModule } from 'angularfire2';
 import { BarcodeScanner } from 'ionic-native';
 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -52,7 +53,7 @@ const config = {
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     AngularFireModule.initializeApp(config),
-    [HttpModule]
+    [HttpModule],
 
   ],
   bootstrap: [IonicApp],
@@ -71,7 +72,7 @@ const config = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BarcodeScanner
+    BarcodeScanner,
   ]
 })
 export class AppModule {}
