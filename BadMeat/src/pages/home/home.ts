@@ -40,10 +40,6 @@ export class HomePage {
   }
 
   getFoodTotal(){
-    return this.foodTotal.totalFoodAmount().subscribe( data => {
-
-    })
-
-    };
+    return this.foodTotal.totalFoodAmount();
   }
 }
