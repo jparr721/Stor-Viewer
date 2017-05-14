@@ -16,7 +16,7 @@
   <ion-card (click)="loadFoodPage()">
     <img src="../../assets/img/MyFoodPic.jpg">
     <div class="card-title">My Food</div>
-    <div class="card-subtitle">44 Items</div>
+    <div class="card-subtitle">{{getFoodTotal()}} Items</div>
   </ion-card>
 
   <ion-card (click)="goToRecipes()">

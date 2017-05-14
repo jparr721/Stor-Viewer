@@ -8,6 +8,9 @@
 
   <ion-navbar color="primary">
     <ion-title>Food Inventory</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,26 +18,26 @@
 
 <ion-content class="outer-content">
   <ion-list>
-    <ion-item-divider color="light">A</ion-item-divider>
-    <ion-item-sliding>
-      <ion-item>
-        <h2>Apples</h2>
-        <p>INSERT TIME AND QUANTITY</p>
-      </ion-item>
-      <ion-item>
-        <h2>Apricot</h2>
-        <p>INSERT TIME AND QUANTITY</p>
-      </ion-item>
-      <ion-item>
-        <h2>Apple-Orange</h2>
-        <p>INSERT TIME AND QUANTITY</p>
-      </ion-item>
-    </ion-item-sliding>
-    <ion-item-divider color="light">B</ion-item-divider>
-    <ion-item-divider color="light">C</ion-item-divider>
-    <ion-item-divider color="light">D</ion-item-divider>
-    <ion-item-divider color="light">E</ion-item-divider>
-    <ion-item-divider color="light">F</ion-item-divider>
+    <ion-item-group *ngFor="let group of groupedItems">
+      <ion-item-divider color="third">{{group.letter}}</ion-item-divider>
+      <ion-item-sliding *ngFor="let item of group.listItems">
+
+        <ion-item>
+          {{item.title}}
+        </ion-item>
+
+        <ion-item-options>
+          <button ion-button icon-only (click)="editItem(item)" color="light">
+            <ion-icon name="paper"></ion-icon>
+          </button>
+
+          <button ion-button icon-only (click)="deleteFood(item)" color="danger">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-item-group>
 
   </ion-list>
 

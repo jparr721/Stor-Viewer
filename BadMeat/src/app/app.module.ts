@@ -17,6 +17,8 @@ import { AddItemPage } from "../pages/add-item-page/add-item-page";
 import { ListsPage } from "../pages/lists-page/lists-page";
 import { RecipePage } from "../pages/recipe-page/recipe-page";
 import { FoodPage } from "../pages/food-page/food-page";
+import { FoodAmountManager } from "../providers/food-amount-manager";
+import { RecipeProvider } from "../providers/recipe-provider";
 import {HttpModule} from "@angular/http";
 
 const cloudSettings: CloudSettings = {
@@ -73,6 +75,8 @@ const config = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
+    FoodAmountManager,
+    RecipeProvider
   ]
 })
 export class AppModule {}

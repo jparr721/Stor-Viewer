@@ -4,13 +4,14 @@ import {AccountPage} from "../account-page/account-page";
 import {RecipePage} from "../recipe-page/recipe-page";
 import {FoodPage} from "../food-page/food-page";
 
+import { FoodAmountManager} from "../../providers/food-amount-manager";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private foodTotal: FoodAmountManager) {
     //TODO - Delete this later, this is just for testing login.
     window.localStorage.removeItem('currentUser');
     if (!this.isLoggedIn()){
@@ -38,4 +39,7 @@ export class HomePage {
     this.navCtrl.push(FoodPage);
   }
 
+  getFoodTotal(){
+    return this.foodTotal.totalFoodAmount();
+  }
 }
