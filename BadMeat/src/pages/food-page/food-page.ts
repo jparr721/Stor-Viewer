@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { RecipeProvider } from "../../providers/recipe-provider";
+
 /**
  * Generated class for the FoodPage page.
  *
@@ -17,6 +18,7 @@ export class FoodPage {
   isFoodExpiring: boolean;
   listTitle: string;
   listItems: any[] = [];
+  listQty: any[] = [];
   groupedItems = [];
   foodName: string;
   quantity: number;
@@ -26,12 +28,9 @@ export class FoodPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private recipeProvider: RecipeProvider, private alertCtrl: AlertController) {
 
+
     this.groupItems(this.listItems);
 
-  }
-
-  totalFoodAmount() {
-    return this.listItems.length;
   }
 
   groupItems(items){
@@ -77,6 +76,7 @@ export class FoodPage {
           text: 'Add Item',
           handler: (data) => {
             this.listItems.push(data);
+
           }
         }
       ]
@@ -87,7 +87,7 @@ export class FoodPage {
   editItem(item){
 
     let editFood = this.alertCtrl.create({
-      title: 'Add to list',
+      title: 'Change food item',
       inputs: [{
         name: 'title'
       }],
@@ -111,6 +111,63 @@ export class FoodPage {
     });
     editFood.present();
   }
+
+  addQty(item){
+    let addQty = this.alertCtrl.create({
+      title: 'Please add a quantity',
+      inputs: [{
+        name: 'title'
+      }],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            this.confirmationAlert();
+          }
+        },
+        {
+          text: 'Add',
+          handler: (data) => {
+            let index = this.listQty.indexOf(item);
+
+            if (index > -1){
+              this.listQty[index] = data;
+            } else {
+              throw new Error("Error, index out of bounds");
+            }
+          }
+        }
+      ]
+    });
+    addQty.present();
+  }
+
+  confirmationAlert() {
+    let confirm = this.alertCtrl.create({
+      title: 'Are you sure?',
+      inputs: [{
+        name: 'title'
+      }],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            //TODO - Make it reset back to the original screen to continue
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+
+          }
+        }
+
+      ]
+    });
+    confirm.present();
+  }
+
+
 
   deleteFood(item){
     let index = this.listItems.indexOf(item);

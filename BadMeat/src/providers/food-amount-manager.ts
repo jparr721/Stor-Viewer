@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { Storage } from '@ionic/storage';
 
 
 
@@ -17,16 +16,12 @@ import { Storage } from '@ionic/storage';
 export class FoodAmountManager {
 
 
-  constructor(public http: Http, public storage: Storage) {
+  constructor(public http: Http) {
     console.log('Hello FoodAmountManager Provider');
 
   }
 
-  totalFoodAmount() {
-    this.storage.get('listItem').then(listItemData => {
-      return listItemData.length
-    });
-  }
+
 
 
 }

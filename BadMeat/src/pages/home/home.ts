@@ -39,7 +39,4 @@ export class HomePage {
     this.navCtrl.push(FoodPage);
   }
 
-  getFoodTotal(){
-    return this.foodTotal.totalFoodAmount();
-  }
 }

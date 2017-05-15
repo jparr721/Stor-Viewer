@@ -20,7 +20,6 @@ import { FoodPage } from "../pages/food-page/food-page";
 import { FoodAmountManager } from "../providers/food-amount-manager";
 import { RecipeProvider } from "../providers/recipe-provider";
 import {HttpModule} from "@angular/http";
-import { IonicStorageModule} from "@ionic/storage";
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -57,7 +56,6 @@ const config = {
     CloudModule.forRoot(cloudSettings),
     AngularFireModule.initializeApp(config),
     [HttpModule],
-    IonicStorageModule.forRoot()
 
   ],
   bootstrap: [IonicApp],
@@ -79,7 +77,6 @@ const config = {
     BarcodeScanner,
     FoodAmountManager,
     RecipeProvider,
-    Storage
   ]
 })
 export class AppModule {}
