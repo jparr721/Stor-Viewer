@@ -9,7 +9,7 @@
   <ion-navbar color="primary">
     <ion-title>Food Inventory</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+      <button ion-button icon-only (click)="addToList()"><ion-icon name="add"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 
@@ -21,7 +21,7 @@
     <!--
     <ion-item-group *ngFor="let group of groupedItems">
       <ion-item-divider color="third">{{group.letter}}</ion-item-divider> -->
-      <ion-item-sliding *ngFor="let item of listItems">
+      <ion-item-sliding *ngFor="let item of foodAmt.listItems">
 
         <ion-item>
           <h2>{{item.title}}</h2>
