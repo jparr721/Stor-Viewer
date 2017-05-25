@@ -5,9 +5,7 @@ import { Database } from '../../providers/database';
 
 /**
  * Generated class for the FoodPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
+ * Most of the leg work is done in the provider.
  */
 @IonicPage()
 @Component({
@@ -27,10 +25,10 @@ export class FoodPage {
     console.log('ionViewDidLoad FoodPage');
   }
 
-  /**
-  * This method will hopefully call the service
-  * and add the foods to the list.
-  **/
+  displayFood(foodKey: string){
+    return this.foodAmt.displayListItems(foodKey);
+  }
+
   addToList() {
     this.foodAmt.addItem();
   }

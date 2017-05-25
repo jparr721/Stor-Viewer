@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AlertController } from 'ionic-angular';
 import { Database } from '../providers/database';
+import { Storage } from '@ionic/storage';
 /*
   Generated class for the FoodAmountManager provider.
 
@@ -13,10 +14,12 @@ import { Database } from '../providers/database';
 export class FoodAmountManager {
   isFoodExpiring: boolean;
   iteratedItems: string;
+  displayedFood: string;
   listItems: any[] = [];
 
 
-  constructor(public http: Http, public db: Database, public alertCtrl: AlertController) {
+  constructor(public http: Http, public db: Database, public alertCtrl: AlertController,
+    private storage: Storage) {
 
     console.log('Hello FoodAmountManager Provider');
 
@@ -27,7 +30,14 @@ export class FoodAmountManager {
     for (i = 0; i < items.length; i++){
       this.iteratedItems = items[i];
     }
+    return this.iteratedItems;
+  }
 
+  displayListItems(item: string){
+    this.storage.get(item).then((values) => {
+      this.displayedFood = values;
+    });
+    return this.displayedFood;
   }
 
 addItem() {
