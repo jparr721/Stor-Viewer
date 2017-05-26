@@ -8,9 +8,6 @@
 
   <ion-navbar color="primary">
     <ion-title>Food Inventory</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addToList()"><ion-icon name="add"></ion-icon></button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -24,8 +21,8 @@
       <ion-item-sliding *ngFor="let item of foodAmt.listItems">
 
         <ion-item>
-          <h2>{{item.title}}</h2>
-          <p>QTY</p>
+          <h2></h2>
+          <p></p>
         </ion-item>
 
         <ion-item-options>
