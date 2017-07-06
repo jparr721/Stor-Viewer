@@ -8,9 +8,6 @@
 
   <ion-navbar color="primary">
     <ion-title>Food Inventory</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addItem()"><ion-icon name="add"></ion-icon></button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -18,17 +15,20 @@
 
 <ion-content class="outer-content">
   <ion-list>
+    <!--
     <ion-item-group *ngFor="let group of groupedItems">
-      <ion-item-divider color="third">{{group.letter}}</ion-item-divider>
-      <ion-item-sliding *ngFor="let item of group.listItems">
+      <ion-item-divider color="third">{{group.letter}}</ion-item-divider> -->
+      <ion-item-sliding *ngFor="let item of foodAmt.listItems">
 
         <ion-item>
-          {{item.title}}
+          <h2></h2>
+          <p></p>
         </ion-item>
 
         <ion-item-options>
           <button ion-button icon-only (click)="editItem(item)" color="light">
             <ion-icon name="paper"></ion-icon>
+
           </button>
 
           <button ion-button icon-only (click)="deleteFood(item)" color="danger">
@@ -37,7 +37,7 @@
         </ion-item-options>
       </ion-item-sliding>
 
-    </ion-item-group>
+   <!-- </ion-item-group> -->
 
   </ion-list>
 

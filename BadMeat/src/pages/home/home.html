@@ -4,9 +4,6 @@
       Home
     </ion-title>
     <ion-buttons end>
-      <button (click)="showAccountPage()">
-        <ion-icon style="font-size:30px" name="contact"></ion-icon>
-      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -16,13 +13,12 @@
   <ion-card (click)="loadFoodPage()">
     <img src="../../assets/img/MyFoodPic.jpg">
     <div class="card-title">My Food</div>
-    <div class="card-subtitle">{{getFoodTotal()}} Items</div>
+    <div class="card-subtitle">{{loadTotalFood()}}</div>
   </ion-card>
 
   <ion-card (click)="goToRecipes()">
     <img src="../../assets/img/Recipes.jpg">
     <div class="card-title">My Recipes</div>
-    <div class="card-subtitle">6 Recipes Available</div>
   </ion-card>
 
 </ion-content>

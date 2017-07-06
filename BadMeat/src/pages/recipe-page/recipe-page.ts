@@ -18,36 +18,12 @@ import {Http} from "@angular/http";
 })
 export class RecipePage {
   Badmeat: any; //Specifies which food you want, hopefully
-  foodItem:Irecipe[];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public fp: FoodPage, private recipe: RecipeProvider) {
-
-    this.recipe.testQuery().subscribe(foodItem => {
-      this.foodItem = foodItem;
-    })
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecipePage');
   }
-
-  loadBadMeat() {
-    this.Badmeat = "chicken";
-    if (this.fp.isFoodExpiring){
-      this.recipe.getRecipes(this.Badmeat).subscribe(foodItem => {
-        this.foodItem = foodItem;
-      });
-    }
-  }
-
-
-
-
-}
-
-interface Irecipe {
-  id: number;
-  title: string;
-  body: string;
 }

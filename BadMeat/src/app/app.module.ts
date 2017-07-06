@@ -6,7 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { AngularFireModule } from 'angularfire2';
 import { BarcodeScanner } from 'ionic-native';
-
+import { SQLite } from 'ionic-native';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -19,8 +20,12 @@ import { RecipePage } from "../pages/recipe-page/recipe-page";
 import { FoodPage } from "../pages/food-page/food-page";
 import { FoodAmountManager } from "../providers/food-amount-manager";
 import { RecipeProvider } from "../providers/recipe-provider";
+import { Database } from '../providers/database';
 import {HttpModule} from "@angular/http";
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -29,6 +34,7 @@ const cloudSettings: CloudSettings = {
 };
 
 // Initialize Firebase
+
 const config = {
   apiKey: "AIzaSyA_HwMuGA-b4v9Eb1zpuw1AWhsHq3HJwgo",
   authDomain: "badmeat-eb028.firebaseapp.com",
@@ -78,6 +84,11 @@ const config = {
     BarcodeScanner,
     FoodAmountManager,
     RecipeProvider,
+<<<<<<< HEAD
+=======
+    SQLite,
+    Database
+>>>>>>> origin/master
   ]
 })
 export class AppModule {}

@@ -7,12 +7,14 @@ import {FoodPage} from "../food-page/food-page";
 import { FoodAmountManager} from "../../providers/food-amount-manager";
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [FoodAmountManager]
 })
 export class HomePage {
 
   constructor(public navCtrl: NavController, private foodTotal: FoodAmountManager) {
     //TODO - Delete this later, this is just for testing login.
+    console.log(window.localStorage.getItem('currentUser'));
     window.localStorage.removeItem('currentUser');
     if (!this.isLoggedIn()){
       console.log('You are not logged in!');
@@ -22,8 +24,14 @@ export class HomePage {
 
   isLoggedIn() {
     if (window.localStorage.getItem('currentUser')){
+
       return true;
+
     }
+  }
+
+  loadTotalFood(): number {
+    return this.foodTotal.getTotalFood();
   }
 
   showAccountPage() {
@@ -39,7 +47,4 @@ export class HomePage {
     this.navCtrl.push(FoodPage);
   }
 
-  getFoodTotal(){
-    return this.foodTotal.totalFoodAmount();
-  }
 }
