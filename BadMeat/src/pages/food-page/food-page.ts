@@ -122,6 +122,3 @@ export class FoodPage {
     }
   }
 }
-
-
-
