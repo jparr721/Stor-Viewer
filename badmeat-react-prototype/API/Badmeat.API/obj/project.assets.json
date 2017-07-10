@@ -21111,10 +21111,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Jarred/Desktop/Programming/React/badmeat/API/Badmeat.API/Badmeat.API.csproj",
+      "projectUniqueName": "/Users/Jarred/Desktop/Programming/badmeat/Badmeat/badmeat-react-prototype/API/Badmeat.API/Badmeat.API.csproj",
       "projectName": "Badmeat.API",
-      "projectPath": "/Users/Jarred/Desktop/Programming/React/badmeat/API/Badmeat.API/Badmeat.API.csproj",
-      "outputPath": "/Users/Jarred/Desktop/Programming/React/badmeat/API/Badmeat.API/obj",
+      "projectPath": "/Users/Jarred/Desktop/Programming/badmeat/Badmeat/badmeat-react-prototype/API/Badmeat.API/Badmeat.API.csproj",
+      "outputPath": "/Users/Jarred/Desktop/Programming/badmeat/Badmeat/badmeat-react-prototype/API/Badmeat.API/obj",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

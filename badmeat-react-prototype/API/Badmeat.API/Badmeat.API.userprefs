@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{802B7E1B-140C-4DDF-BAE0-8A62A5A3C840}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/FoodItemController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/ValuesController.cs">
     <Files>
       <File FileName="Controllers/ValuesController.cs" Line="1" Column="1" />
       <File FileName="Startup.cs" Line="18" Column="35" />
