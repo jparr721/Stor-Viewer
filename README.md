@@ -1,4 +1,4 @@
-# Badmeat v0.7.2
+# Badmeat v0.1.9
 
 ## Welcome to Badmeat!
 
@@ -15,11 +15,10 @@ Badmeat is a food management and e-pantry app that will allow you to quickly, an
 - [x] Remove "hello world" implementation and create a simple core app (multiple blank screens + navigation)
 - [x] Push to repo; have team pull and build
 - [x] Work on finishing screens so we can develop backend
-- [x] Connect to databse for authentication and user account management
+- [ ] Connect to databse for authentication and user account management
 - [ ] Connect user accounts to specific account items and foods.
 - [ ] Add google authentication
 
-For developers: Please message the group before pushing changes to the master branch to make sure we can avoid merge conflicts.
 
 
-*A Hacker's Circle Product*
+*A Sphynx Software Group Product*
