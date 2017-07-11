@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, InputGroup, Input, Text, Item } from 'native-base';
 import { Sheet } from '../../styles';
-import MapView from 'react-native-maps'
+import MapView from 'react-native-maps';
+import {Keyboard} from 'react-native';
 
 export default class Map extends Component {
     render() {
@@ -14,7 +15,7 @@ export default class Map extends Component {
                         <Icon name="ios-people" />
                     </Item>
                     <Button transparent>
-                        <Text>Search</Text>
+                        <Text onPress={Keyboard.dismiss}>Search</Text>
                     </Button>
                 </Header>
                 <MapView
