@@ -40,5 +40,13 @@ namespace Badmeat.API.Controllers
 
             return new ObjectResult(item);
         }
-    }
+        [HttpPost("{id}")]
+        public IActionResult Create([FromBody]FoodListItems foodItem)
+        {
+            if (foodItem == null)
+            {
+                return BadRequest("Failed to post because food item is undefined")    
+            }
+        }
+    }   
 }
