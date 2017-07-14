@@ -3,13 +3,12 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../actions';
+import { Drawer } from '../router';
 
 class AppContainer extends Component {
   render(){
     return (
-      <View>
-        <Text>Fuck my life</Text>
-      </View>
+      <Drawer />
     )
   }
 }
