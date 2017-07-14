@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../actions';
 import { Drawer } from '../router';
+import Settings from '../components/settings/settings';
 
 class AppContainer extends Component {
   render(){

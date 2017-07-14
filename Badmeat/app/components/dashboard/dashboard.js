@@ -1,12 +1,14 @@
 import React, { PropTypes, Component } from 'react'
-import { View, ScrollView, Text } from 'react-native';
+import { View, ScrollView, Text, Button } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { Navigator } from '../../router';
 
 class Dashboard extends Component {
   render () {
     return (
-      <ScrollView>
-        <Text>Super cool text View</Text>
+      <ScrollView style={{marginTop: 20}}>
+        <Text>Dashboard View Goes Here</Text>
+        <Navigator />
       </ScrollView>
     );
   }
@@ -15,7 +17,7 @@ class Dashboard extends Component {
 Dashboard.navigationOptions = {
   drawerLabel: "Dashboard",
   drawerIcon: ({ tintColor }) => (
-    <MaterialIcons name="view-dashboard" size={24} style={{ color: tintColor }} />
+    <MaterialIcons name="dashboard" size={24} style={{ color: tintColor }} />
   ),
 };
 

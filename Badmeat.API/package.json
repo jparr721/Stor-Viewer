@@ -1,0 +1,19 @@
+{
+  "name": "badmeat.api",
+  "version": "1.0.0",
+  "description": "API for badmeat application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jparr721/Badmeat.git"
+  },
+  "author": "Sphynx Software",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jparr721/Badmeat/issues"
+  },
+  "homepage": "https://github.com/jparr721/Badmeat#readme"
+}
