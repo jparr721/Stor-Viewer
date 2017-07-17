@@ -1,3 +1,8 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
+import drawerReducer from './drawerReducer';
 
-// export default combineReducers(Object.assign{}, );
+const rootReducer = combineReducers({
+  drawer: drawerReducer,
+});
+
+export default rootReducer;
