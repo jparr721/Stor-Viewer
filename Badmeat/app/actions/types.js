@@ -1,2 +1,0 @@
-export const DRAWER_OPEN_TRUE = 'DRAWER_OPEN_TRUE';
-export const DRAWER_OPEN_FALSE = 'DRAWER_OPEN_FALSE';
