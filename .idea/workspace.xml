@@ -81,8 +81,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Badmeat/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="267">
+              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -94,10 +94,10 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1502458167065" expanded="true" signature="53696:53738" ph="..." />
-                <marker date="1502458167065" expanded="true" signature="53696:53756" ph="..." />
-                <marker date="1502458167065" expanded="true" signature="53696:53769" ph="..." />
-                <marker date="1502458167065" expanded="true" signature="53696:53784" ph="..." />
+                <marker date="1502458977573" expanded="true" signature="54274:54316" ph="..." />
+                <marker date="1502458977573" expanded="true" signature="54274:54334" ph="..." />
+                <marker date="1502458977573" expanded="true" signature="54274:54347" ph="..." />
+                <marker date="1502458977573" expanded="true" signature="54274:54362" ph="..." />
               </folding>
             </state>
           </provider>
@@ -688,12 +688,20 @@
       <updated>1501968681958</updated>
       <workItem from="1501968685496" duration="3494000" />
       <workItem from="1502419030168" duration="8244000" />
-      <workItem from="1502452031143" duration="4827000" />
+      <workItem from="1502452031143" duration="5823000" />
     </task>
+    <task id="LOCAL-00001" summary="Second attempt to wipe .idea from Git.">
+      <created>1502458380805</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1502458380805</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16565000" />
+    <option name="totallyTimeSpent" value="17561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -738,6 +746,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Second attempt to wipe .idea from Git." />
+    <option name="LAST_COMMIT_MESSAGE" value="Second attempt to wipe .idea from Git." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1006,18 +1018,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1502458167065" expanded="true" signature="53696:53738" ph="..." />
-            <marker date="1502458167065" expanded="true" signature="53696:53756" ph="..." />
-            <marker date="1502458167065" expanded="true" signature="53696:53769" ph="..." />
-            <marker date="1502458167065" expanded="true" signature="53696:53784" ph="..." />
+            <marker date="1502458977573" expanded="true" signature="54274:54316" ph="..." />
+            <marker date="1502458977573" expanded="true" signature="54274:54334" ph="..." />
+            <marker date="1502458977573" expanded="true" signature="54274:54347" ph="..." />
+            <marker date="1502458977573" expanded="true" signature="54274:54362" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Badmeat/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state relative-caret-position="267">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
       </provider>
