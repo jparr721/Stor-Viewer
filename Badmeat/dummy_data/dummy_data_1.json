@@ -1,0 +1,58 @@
+{
+  "newPantryItems": [
+    {
+      "name": "rice"
+    },
+    {
+      "name": "fish"
+    },
+    {
+      "name": "eggs"
+    },
+    {
+      "name": "burger"
+    }
+  ],
+
+  "expiringFood": [
+    {
+      "name": "chicken"
+    },
+    {
+      "name": "apples"
+    },
+    {
+      "name": "milk"
+    },
+    {
+      "name": "watermelon"
+    }
+  ],
+
+  "fullPantry": [
+    {
+      "name": "rice"
+    },
+    {
+      "name": "fish"
+    },
+    {
+      "name": "eggs"
+    },
+    {
+      "name": "burger"
+    },
+    {
+      "name": "chicken"
+    },
+    {
+      "name": "apples"
+    },
+    {
+      "name": "milk"
+    },
+    {
+      "name": "watermelon"
+    }
+  ]
+}
