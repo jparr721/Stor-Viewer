@@ -9,45 +9,66 @@ class Pantry extends Component {
         this.state = {
             fullPantryList: [],
             expiringItems: [],
-            recentlyAdded: []
+            recentlyAdded: [],
+            viewingAllItems: false
         };
+        this.fetchExpiring();
+        this.fetchNewFood();
+        this.fetchAllFood();
     }
 
     render() {
-        this.fetchAllFood();
-        this.fetchExpiring();
-        this.fetchNewFood();
-        return (
-            <View style={styles.container}>
-                <Header headerText='Pantry'/>
+        if (!this.state.viewingAllItems) {
 
-                {/*Expiring food view (May add horizontal scrolling)*/}
-                <SmallHeader headerText="Expiring Soon"/>
-                <View style={styles.row}>
-                    {this.state.expiringItems}
-                </View>
+            return (
+                <View style={styles.container}>
+                    <Header headerText='Pantry'/>
 
-                {/*Recently added food view (May add horizontal scrolling)*/}
-                <SmallHeader headerText="Recently Added"/>
-                <View style={styles.row}>
-                    {this.state.recentlyAdded}
-                </View>
+                    {/*Expiring food view (May add horizontal scrolling)*/}
+                    <SmallHeader headerText="Expiring Soon"/>
+                    <View style={styles.row}>
+                        {this.state.expiringItems}
+                    </View>
 
-                <View>
-                    <Button
-                        onPress={() => this.handleViewAll()}
-                        title='View All'
-                    />
+                    {/*Recently added food view (May add horizontal scrolling)*/}
+                    <SmallHeader headerText="Recently Added"/>
+                    <View style={styles.row}>
+                        {this.state.recentlyAdded}
+                    </View>
+
+                    <View style={styles.viewAllButton}>
+                        <Button
+                            onPress={() => this.handleViewAll()}
+                            title='View All'
+                        />
+                    </View>
                 </View>
-            </View>
-        );
+            );
+        }
+        else {
+            return(
+                <View style={styles.container}>
+                    <Header headerText='Pantry'/>
+                    <View style={styles.row}>
+                        {this.state.fullPantryList}
+                    </View>
+
+                    <View style={styles.viewAllButton}>
+                        <Button
+                            onPress={() => this.handleViewAll()}
+                            title='< New & Old'
+                        />
+                    </View>
+                </View>
+            );
+        }
     }
 
     fetchAllFood () {
         for (let i in pantryData.fullPantry) {
             this.state.fullPantryList.push(
-                <SmallCard key={i}>
-                    <Text>{i}</Text>
+                <SmallCard key={pantryData.fullPantry[i].name}>
+                    <Text>{pantryData.fullPantry[i].name}</Text>
                 </SmallCard>
             )
         }
@@ -75,7 +96,9 @@ class Pantry extends Component {
 
     // Place holder for button handler
     handleViewAll(){
-
+        this.setState({
+            viewingAllItems: !this.state.viewingAllItems
+        });
     };
 }
 
@@ -91,7 +114,13 @@ const styles = StyleSheet.create({
     row: {
         flex: 1,
         flexDirection: 'row',
+    },
+    viewAllButton: {
+        marginBottom: 40,
+        marginLeft: 40,
+        marginRight: 40,
     }
+
 });
 
 export default Pantry;
