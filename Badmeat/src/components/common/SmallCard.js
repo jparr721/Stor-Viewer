@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 1,
-  }
+  },
 });
 
 export { SmallCard };

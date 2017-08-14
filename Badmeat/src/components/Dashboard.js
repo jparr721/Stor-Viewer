@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Card, SmallCard , Header} from './common';
+import { Card, SmallCard, Header } from './common';
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+    flex: 1,
+  },
+  smallCardContainer: {
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});
 
 class Dashboard extends Component {
   render() {
@@ -18,22 +30,17 @@ class Dashboard extends Component {
             <Text>Small Card</Text>
           </SmallCard>
         </View>
+        <View style={styles.smallCardContainer}>
+          <SmallCard>
+            <Text>Small Card</Text>
+          </SmallCard>
+          <SmallCard>
+            <Text>Small Card</Text>
+          </SmallCard>
+        </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 20,
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  smallCardContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  }
-});
 
 export default Dashboard;
