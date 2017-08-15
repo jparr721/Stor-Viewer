@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     flex: 1,
+    backgroundColor: '#80d6ff',
   },
   smallCardContainer: {
     flex: 0,
@@ -18,7 +19,7 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Home" />
+        <Header headerText="Home" button1="magnify" button2="bell" />
         <Card>
           <Text>Dashboard</Text>
         </Card>
