@@ -5,6 +5,23 @@ import { SmallHeader } from './common/SmallHeader';
 
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+    flex: 1,
+    backgroundColor: '#42a5f5',
+  },
+  row: {
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  viewAllButton: {
+    alignItems: 'center',
+  },
+
+});
+
 class Pantry extends Component {
   constructor(props) {
     super(props);
@@ -102,23 +119,5 @@ class Pantry extends Component {
   }
 }
 
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 20,
-    flex: 1,
-  },
-  row: {
-    flex: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  viewAllButton: {
-    marginBottom: 40,
-    marginLeft: 40,
-    marginRight: 40,
-  },
-
-});
 
 export default Pantry;
