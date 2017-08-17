@@ -15,7 +15,7 @@ Badmeat is a food management and e-pantry app that will allow you to quickly, an
 - [x] Remove "hello world" implementation and create a simple core app (multiple blank screens + navigation)
 - [x] Push to repo; have team pull and build
 - [x] Work on finishing screens so we can develop backend
-- [ ] Connect to databse for authentication and user account management
+- [x] Connect to databse for authentication and user account management
 - [ ] Connect user accounts to specific account items and foods.
 - [ ] Add google authentication
 
