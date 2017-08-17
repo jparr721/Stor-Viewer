@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { Card, SmallCard, Header } from './common';
 import { SmallHeader } from './common/SmallHeader';
+import { FourColumnGrid} from './common/FourColumnGrid'
 
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
@@ -26,7 +27,7 @@ class Pantry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullPantryList: [],
+      fullPantryList: [[]],
       expiringItems: [],
       recentlyAdded: [],
       viewingAllItems: false,
@@ -66,10 +67,9 @@ class Pantry extends Component {
 
     return (
       <View style={styles.container}>
-        <Header headerText="Pantry" />
-        <View style={styles.row}>
-          {this.state.fullPantryList}
-        </View>
+          <Header headerText="Pantry" />
+          <FourColumnGrid items={this.state.fullPantryList}/>
+
 
         <View style={styles.viewAllButton}>
           <Button
@@ -82,12 +82,28 @@ class Pantry extends Component {
   }
 
   fetchAllFood() {
-    for (const i in pantryData.fullPantry) {
-      this.state.fullPantryList.push(
-        <SmallCard key={pantryData.fullPantry[i].name}>
-          <Text>{pantryData.fullPantry[i].name}</Text>
-        </SmallCard>,
-      );
+      let rowIndex = 0;
+      let counter =1;
+
+    for (let i in pantryData.fullPantry) {
+        if (counter <= 4) {
+            this.state.fullPantryList[rowIndex].push(
+                <SmallCard key={pantryData.fullPantry[i].name}>
+                    <Text>{pantryData.fullPantry[i].name}</Text>
+                </SmallCard>,
+            );
+            counter++;
+        }
+        else {
+            rowIndex++;
+            this.state.fullPantryList.push([]);
+            this.state.fullPantryList[rowIndex].push(
+                <SmallCard key={pantryData.fullPantry[i].name}>
+                    <Text>{pantryData.fullPantry[i].name}</Text>
+                </SmallCard>,
+            );
+            counter = 2;
+        }
     }
   }
 
