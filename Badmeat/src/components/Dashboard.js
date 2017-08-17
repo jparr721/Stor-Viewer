@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet, View } from 'react-native';
 import { Card, SmallCard, Header } from './common';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    paddingTop: 20,
     flex: 1,
-    backgroundColor: '#80d6ff',
+    backgroundColor: '#42a5f5',
   },
   smallCardContainer: {
     flex: 0,
@@ -20,25 +20,35 @@ class Dashboard extends Component {
     return (
       <View style={styles.container}>
         <Header headerText="Home" button1="magnify" button2="bell" />
-        <Card>
-          <Text>Dashboard</Text>
-        </Card>
-        <View style={styles.smallCardContainer}>
-          <SmallCard>
-            <Text>Small Card</Text>
-          </SmallCard>
-          <SmallCard>
-            <Text>Small Card</Text>
-          </SmallCard>
-        </View>
-        <View style={styles.smallCardContainer}>
-          <SmallCard>
-            <Text>Small Card</Text>
-          </SmallCard>
-          <SmallCard>
-            <Text>Small Card</Text>
-          </SmallCard>
-        </View>
+        <ScrollView>
+          <Card>
+            <Text>Dashboard</Text>
+          </Card>
+          <View style={styles.smallCardContainer}>
+            <SmallCard>
+              <Text>Small Card</Text>
+            </SmallCard>
+            <SmallCard>
+              <Text>Small Card</Text>
+            </SmallCard>
+          </View>
+          <View style={styles.smallCardContainer}>
+            <SmallCard>
+              <Text>Small Card</Text>
+            </SmallCard>
+            <SmallCard>
+              <Text>Small Card</Text>
+            </SmallCard>
+          </View>
+          <View style={styles.smallCardContainer}>
+            <SmallCard>
+              <Text>Small Card</Text>
+            </SmallCard>
+            <SmallCard>
+              <Text>Small Card</Text>
+            </SmallCard>
+          </View>
+        </ScrollView>
       </View>
     );
   }
