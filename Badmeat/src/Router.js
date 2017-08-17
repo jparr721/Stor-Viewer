@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, TabBarBottom } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 // Screen Imports
@@ -19,7 +19,7 @@ const Router = TabNavigator(
           <Icon
             name='collage'
             type="material-community"
-            size={32}
+            size={25}
             color={tintColor} />
         ),
       }
@@ -32,7 +32,7 @@ const Router = TabNavigator(
           <Icon
             name='map-marker-radius'
             type="material-community"
-            size={32}
+            size={25}
             color={tintColor} />
         )
       }
@@ -45,7 +45,7 @@ const Router = TabNavigator(
           <Icon
             name='camera-iris'
             type="material-community"
-            size={32}
+            size={25}
             color={tintColor} />
         ),
       }
@@ -58,7 +58,7 @@ const Router = TabNavigator(
           <Icon
             name='bell'
             type="material-community"
-            size={32}
+            size={25}
             color={tintColor} />
         )
       }
@@ -71,14 +71,18 @@ const Router = TabNavigator(
           <Icon
             name='food-apple'
             type="material-community"
-            size={32}
+            size={25}
             color={tintColor} />
         )
       }
     },
   },
   {
+      tabBarPosition: 'bottom',
+      tabBarComponent: TabBarBottom,
     tabBarOptions: {
+
+        showIcon: true,
       showLabel: false,
       activeTintColor: '#42a5f5',
     },

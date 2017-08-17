@@ -8,7 +8,7 @@ const pantryData = require('../../dummy_data/dummy_data_1.json');
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    paddingTop: 20,
     flex: 1,
     backgroundColor: '#42a5f5',
   },
