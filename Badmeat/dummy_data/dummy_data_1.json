@@ -11,6 +11,15 @@
     },
     {
       "name": "burger"
+    },
+    {
+      "name": "oranges"
+    },
+    {
+      "name": "mac & cheese"
+    },
+    {
+      "name": "potatoes"
     }
   ],
 
@@ -26,6 +35,18 @@
     },
     {
       "name": "watermelon"
+    },
+    {
+      "name": "cheese"
+    },
+    {
+      "name": "tomatoes"
+    },
+    {
+      "name": "cherries"
+    },
+    {
+      "name": "sour cream"
     }
   ],
 

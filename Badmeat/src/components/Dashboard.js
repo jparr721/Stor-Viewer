@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { ScrollView, Text, StyleSheet, View } from 'react-native';
-import { Card, SmallCard, Header } from './common';
+import React, {Component} from 'react';
+import {ScrollView, Text, StyleSheet, View} from 'react-native';
+import {Card, SmallCard, Header} from './common';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +19,7 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Home" button1="magnify" button2="bell" />
+        <Header headerText="Home" button1="magnify" button2="settings"/>
         <ScrollView>
           <Card>
             <Text>Dashboard</Text>

@@ -19,7 +19,7 @@ const Router = TabNavigator(
           <Icon
             name='collage'
             type="material-community"
-            size={25}
+            size={28}
             color={tintColor} />
         ),
       }
@@ -32,7 +32,7 @@ const Router = TabNavigator(
           <Icon
             name='map-marker-radius'
             type="material-community"
-            size={25}
+            size={28}
             color={tintColor} />
         )
       }
@@ -45,7 +45,7 @@ const Router = TabNavigator(
           <Icon
             name='camera-iris'
             type="material-community"
-            size={25}
+            size={28}
             color={tintColor} />
         ),
       }
@@ -58,7 +58,7 @@ const Router = TabNavigator(
           <Icon
             name='bell'
             type="material-community"
-            size={25}
+            size={28}
             color={tintColor} />
         )
       }
@@ -71,7 +71,7 @@ const Router = TabNavigator(
           <Icon
             name='food-apple'
             type="material-community"
-            size={25}
+            size={28}
             color={tintColor} />
         )
       }
