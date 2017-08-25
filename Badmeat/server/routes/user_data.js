@@ -1,6 +1,6 @@
 const express = require('express');
 const { ObjectID } = require('mongodb');
-
+const router = express.Router();
 const { User } = require('../models/user');
 
 const app = express();
@@ -25,3 +25,5 @@ User.findOne({
     res.status(400).send(e);
   });
 });
+
+module.exports = router;

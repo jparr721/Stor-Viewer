@@ -76,7 +76,6 @@ class Pantry extends Component {
       </View>
     );
   }
-
   // Place holder for button handler
   handleViewAll() {
     this.setState({
