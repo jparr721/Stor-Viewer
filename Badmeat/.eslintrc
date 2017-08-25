@@ -3,5 +3,6 @@
   "rules": {
     "arrow-body-style": 0,
     "indent": 0,
+    "camelcase": 0,
     }
 }
