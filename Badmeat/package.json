@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "server": "node server/server.js",
     "test": "jest"
+  },
+  "engines": {
+    "node": "8.2.1"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
