@@ -1,4 +1,4 @@
-# Badmeat v0.2.0
+# Badmeat v0.4.0
 
 ## Welcome to Badmeat!
 
