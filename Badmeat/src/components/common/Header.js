@@ -2,11 +2,28 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import { HeaderButton } from './HeaderButton';
+import {NewEntryDialogue} from "./NewEntryDialogue";
 
-// Make a component
+
 const Header = (props) => {
   const { textStyle, viewStyle, container } = styles;
-
+  let newEntryButtonContent = <NewEntryDialogue/>;
+  if (props.button1 === "plus") {
+    return (
+      <View style={container}>
+        <Avatar
+          small
+          rounded
+          icon={{ name: 'account-circle' }}
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Text style={textStyle}>{props.headerText}</Text>
+        <HeaderButton iconName={props.button1} content={newEntryButtonContent}/>
+        <HeaderButton iconName={props.button2} />
+      </View>
+    );
+  }
   return (
     <View style={container}>
       <Avatar
@@ -21,6 +38,7 @@ const Header = (props) => {
       <HeaderButton iconName={props.button2} />
     </View>
   );
+
 };
 
 const styles = {

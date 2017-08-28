@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Button } from 'react-native';
 import { Header, SmallHeader, ColumnGrid} from './common';
-
+import { NewEntryDialogue } from './common'
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
 const styles = StyleSheet.create({
@@ -58,9 +58,10 @@ class Pantry extends Component {
       );
     }
 
+
     return (
       <View style={styles.container}>
-        <Header headerText="Pantry" button1="magnify"/>
+        <Header headerText="Pantry" button1="magnify" buttonOneDisplayContent="newEntry" />
         <ColumnGrid
           items={pantryData.fullPantry}
           columns={4}
@@ -81,6 +82,12 @@ class Pantry extends Component {
     this.setState({
       viewingAllItems: !this.state.viewingAllItems,
     });
+  }
+
+  handleNewEntry() {
+    return(
+      <NewEntryDialogue/>
+    );
   }
 }
 
