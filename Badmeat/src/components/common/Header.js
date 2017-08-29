@@ -8,6 +8,7 @@ import {NewEntryDialogue} from "./NewEntryDialogue";
 const Header = (props) => {
   const { textStyle, viewStyle, container } = styles;
   let newEntryButtonContent = <NewEntryDialogue/>;
+
   if (props.button1 === "plus") {
     return (
       <View style={container}>
@@ -19,7 +20,7 @@ const Header = (props) => {
           activeOpacity={0.7}
         />
         <Text style={textStyle}>{props.headerText}</Text>
-        <HeaderButton iconName={props.button1} content={newEntryButtonContent}/>
+        <HeaderButton iconName={props.button1} content={newEntryButtonContent} title="Add New Entry"/>
         <HeaderButton iconName={props.button2} />
       </View>
     );

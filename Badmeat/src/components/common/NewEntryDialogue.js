@@ -2,16 +2,21 @@
  * Created by deonj on 8/24/2017.
  */
 import React, {Component} from 'react';
-import { Modal, Text, TouchableOpacity, View } from 'react-native';
+import { Modal, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import {Icon} from 'react-native-elements'
 
+const styles = StyleSheet.create({
+  container:{
+    marginRight: 10,
+  },
+
+});
+
 class NewEntryDialogue extends Component {
-
-
   render() {
     return (
-      <View style={{marginRight: 10}}>
-        <Text>ayyyyyy! Time to add some more food!</Text>
+      <View style={styles.container}>
+        <Text >Enter details or use the camera!</Text>
       </View>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { TabNavigator, TabBarBottom } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import {TabNavigator, TabBarBottom} from 'react-navigation';
+import {Icon} from 'react-native-elements';
 
 // Screen Imports
 import Dashboard from './components/Dashboard';
@@ -15,12 +15,12 @@ const Router = TabNavigator(
       screen: Dashboard,
       path: '',
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: ({tintColor}) => (
           <Icon
             name='collage'
             type="material-community"
             size={28}
-            color={tintColor} />
+            color={tintColor}/>
         ),
       }
     },
@@ -28,12 +28,12 @@ const Router = TabNavigator(
       screen: Map,
       path: '',
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: ({tintColor}) => (
           <Icon
             name='map-marker-radius'
             type="material-community"
             size={28}
-            color={tintColor} />
+            color={tintColor}/>
         )
       }
     },
@@ -41,12 +41,12 @@ const Router = TabNavigator(
       screen: Camera,
       path: '',
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: ({tintColor}) => (
           <Icon
             name='camera-iris'
             type="material-community"
             size={28}
-            color={tintColor} />
+            color={tintColor}/>
         ),
       }
     },
@@ -54,12 +54,12 @@ const Router = TabNavigator(
       screen: Notifications,
       path: '',
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: ({tintColor}) => (
           <Icon
             name='bell'
             type="material-community"
             size={28}
-            color={tintColor} />
+            color={tintColor}/>
         )
       }
     },
@@ -67,22 +67,24 @@ const Router = TabNavigator(
       screen: Pantry,
       path: '',
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: ({tintColor}) => (
           <Icon
             name='food-apple'
             type="material-community"
             size={28}
-            color={tintColor} />
+            color={tintColor}/>
         )
       }
     },
   },
   {
-      tabBarPosition: 'bottom',
-      tabBarComponent: TabBarBottom,
+    tabBarPosition: 'bottom',
+    tabBarComponent: TabBarBottom,
+    animationEnabled: false,
+    swipeEnabled: true,
     tabBarOptions: {
 
-        showIcon: true,
+      showIcon: true,
       showLabel: false,
       activeTintColor: '#42a5f5',
     },
