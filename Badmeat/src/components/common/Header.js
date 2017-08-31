@@ -7,24 +7,27 @@ import {NewEntryDialogue} from "./NewEntryDialogue";
 
 const Header = (props) => {
   const { textStyle, viewStyle, container } = styles;
-  let newEntryButtonContent = <NewEntryDialogue/>;
+  let title1; let title2;
+  let content1; let content2;
 
-  if (props.button1 === "plus") {
-    return (
-      <View style={container}>
-        <Avatar
-          small
-          rounded
-          icon={{ name: 'account-circle' }}
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Text style={textStyle}>{props.headerText}</Text>
-        <HeaderButton iconName={props.button1} content={newEntryButtonContent} title="Add New Entry"/>
-        <HeaderButton iconName={props.button2} />
-      </View>
-    );
+  if (props.button1Content === "new") {
+    title1 = "Add New Entry";
+    content1 = <NewEntryDialogue/>;
+  } else if (props.button1Content === "search") {
+    title1 = "Search"
+  } else if (props.button1Content === "settings") {
+    title1 = "Settings"
   }
+
+  if (props.button2Content === "new") {
+    title2 = "Add New Entry";
+    content2 = <NewEntryDialogue/>;
+  } else if (props.button2Content === "search") {
+    title2 = "Search"
+  } else if (props.button2Content === "settings") {
+    title2 = "Settings"
+  }
+
   return (
     <View style={container}>
       <Avatar
@@ -35,8 +38,8 @@ const Header = (props) => {
         activeOpacity={0.7}
       />
       <Text style={textStyle}>{props.headerText}</Text>
-      <HeaderButton iconName={props.button1} />
-      <HeaderButton iconName={props.button2} />
+      <HeaderButton iconName={props.button1} content={content1} title={title1}/>
+      <HeaderButton iconName={props.button2} content={content2} title={title2}/>
     </View>
   );
 
