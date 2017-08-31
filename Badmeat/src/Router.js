@@ -4,7 +4,7 @@ import {Icon} from 'react-native-elements';
 
 // Screen Imports
 import Dashboard from './components/Dashboard';
-import Camera from './components/Camera';
+import CameraTab from './components/CameraTab';
 import Map from './components/Map';
 import Pantry from './components/Pantry';
 import Notifications from './components/Notifications';
@@ -37,8 +37,8 @@ const Router = TabNavigator(
         )
       }
     },
-    Camera: {
-      screen: Camera,
+    CameraTab: {
+      screen: CameraTab,
       path: '',
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
