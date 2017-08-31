@@ -28,7 +28,7 @@ class Pantry extends Component {
     if (!this.state.viewingAllItems) {
       return (
         <View style={styles.container}>
-          <Header headerText="Pantry" button1="plus"/>
+          <Header headerText="Pantry" button1="plus" button1Content="new"/>
 
           {/* Expiring food view (May add horizontal scrolling) */}
           <SmallHeader headerText="Expiring Soon"/>
