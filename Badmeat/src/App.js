@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
-import reducers from './reducers';
+import { Provider, connect } from 'react-redux';
 import Router from './Router';
-
+import configureStore from '../configureStore'
+import { fetchDataFromAPI }from './actions'
 class App extends Component {
   render() {
 
-    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+    const store = configureStore();
     return (
       <Provider store={store}>
         <Router />
@@ -17,4 +15,15 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getData: () => dispatch(fetchDataFromAPI())
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
