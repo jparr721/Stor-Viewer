@@ -11,7 +11,7 @@ const initialState = {
   error: false
 };
 
-function toggleViewAll(state, action) {
+function toggleViewAll(state = initialState, action) {
   switch (action.type) {
     case HANDLE_VIEW_ALL:
       return !state;
