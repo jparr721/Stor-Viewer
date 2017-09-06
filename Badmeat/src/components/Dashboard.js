@@ -19,7 +19,7 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Home" button1="magnify" button2="settings"/>
+        <Header headerText="Home" button1="magnify" button1Content="search" button2="settings" button2Content="settings"/>
         <ScrollView>
           <Card>
             <Text>Dashboard</Text>

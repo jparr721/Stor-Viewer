@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Button } from 'react-native';
 import { Header, SmallHeader, ColumnGrid} from './common';
-
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
 const styles = StyleSheet.create({
@@ -29,7 +28,7 @@ class Pantry extends Component {
     if (!this.state.viewingAllItems) {
       return (
         <View style={styles.container}>
-          <Header headerText="Pantry" button1="plus"/>
+          <Header headerText="Pantry" button1="plus" button1Content="new"/>
 
           {/* Expiring food view (May add horizontal scrolling) */}
           <SmallHeader headerText="Expiring Soon"/>
@@ -58,9 +57,10 @@ class Pantry extends Component {
       );
     }
 
+
     return (
       <View style={styles.container}>
-        <Header headerText="Pantry" button1="magnify"/>
+        <Header headerText="Pantry" button1="magnify" />
         <ColumnGrid
           items={pantryData.fullPantry}
           columns={4}
@@ -82,6 +82,7 @@ class Pantry extends Component {
       viewingAllItems: !this.state.viewingAllItems,
     });
   }
+
 }
 
 

@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, 
+         TouchableOpacity,
+         View,
+         AppRegistry, 
+         Dimensions, 
+         TouchableHighlight,
+         StyleSheet  } from 'react-native';
 import Modal from 'react-native-modal';
-
+import Camera from 'react-native-camera'
 import styles from './CameraTab.style';
 
-export default class CameraTabß extends Component {
+export default class CameraTab extends Component {
   state = {
     visibleModal: null,
   };
@@ -17,9 +23,23 @@ export default class CameraTabß extends Component {
     </TouchableOpacity>
   );
 
-  _renderModalContent = () => (
+  _renderCaptureContent = () => (
     <View style={styles.modalContent}>
-      <Text>Hello!</Text>
+      <Camera
+          ref={(cam) => {
+            this.camera = cam;
+          }}
+          style={styles.preview}
+          aspect={Camera.constants.Aspect.fill}>
+          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+        </Camera>
+      {this._renderButton('Close', () => this.setState({ visibleModal: null }))}
+    </View>
+  );
+
+  _renderSelectContent = () => (
+    <View style={styles.modalContent}>
+      <Text>Photo Selection</Text>
       {this._renderButton('Close', () => this.setState({ visibleModal: null }))}
     </View>
   );
@@ -27,57 +47,33 @@ export default class CameraTabß extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this._renderButton('Default modal', () => this.setState({ visibleModal: 1 }))}
-        {this._renderButton('Sliding from the sides', () => this.setState({ visibleModal: 2 }))}
-        {this._renderButton('A slower modal', () => this.setState({ visibleModal: 3 }))}
-        {this._renderButton('Fancy modal!', () => this.setState({ visibleModal: 4 }))}
-        {this._renderButton('Bottom half modal', () => this.setState({ visibleModal: 5 }))}
-        {this._renderButton('Modal that can be closed on backdrop press', () =>
-          this.setState({ visibleModal: 6 }),
-        )}
-        <Modal isVisible={this.state.visibleModal === 1}>
-          {this._renderModalContent()}
+        {this._renderButton('Capture', () => this.setState({ visibleModal: 1 }))}
+        {this._renderButton('Select', () => this.setState({ visibleModal: 2 }))}
+        
+        <Modal 
+          isVisible={this.state.visibleModal === 1}
+          animationIn={'slideInLeft'}
+          animationOut={'slideOutLeft'}
+        >
+          {this._renderCaptureContent()}
         </Modal>
         <Modal
           isVisible={this.state.visibleModal === 2}
-          animationIn={'slideInLeft'}
+          animationIn={'slideInRight'}
           animationOut={'slideOutRight'}
         >
-          {this._renderModalContent()}
-        </Modal>
-        <Modal
-          isVisible={this.state.visibleModal === 3}
-          animationInTiming={2000}
-          animationOutTiming={2000}
-          backdropTransitionInTiming={2000}
-          backdropTransitionOutTiming={2000}
-        >
-          {this._renderModalContent()}
-        </Modal>
-        <Modal
-          isVisible={this.state.visibleModal === 4}
-          backdropColor={'red'}
-          backdropOpacity={1}
-          animationIn={'zoomInDown'}
-          animationOut={'zoomOutUp'}
-          animationInTiming={1000}
-          animationOutTiming={1000}
-          backdropTransitionInTiming={1000}
-          backdropTransitionOutTiming={1000}
-        >
-          {this._renderModalContent()}
-        </Modal>
-        <Modal isVisible={this.state.visibleModal === 5} style={styles.bottomModal}>
-          {this._renderModalContent()}
-        </Modal>
-        <Modal
-          isVisible={this.state.visibleModal === 6}
-          onBackdropPress={() => this.setState({ visibleModal: null })}
-        >
-          {this._renderModalContent()}
+          {this._renderSelectContent()}
         </Modal>
       </View>
     );
+  }
+
+  takePicture() {
+    const options = {};
+    //options.location = ...
+    this.camera.capture({metadata: options})
+      .then((data) => console.log(data))
+      .catch(err => console.error(err));
   }
 }
 
