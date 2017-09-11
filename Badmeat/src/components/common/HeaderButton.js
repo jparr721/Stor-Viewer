@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { TouchableOpacity, StyleSheet,View, Text, Modal} from 'react-native';
 import { Icon } from 'react-native-elements';
-import {NewEntryDialogue} from "./NewEntryDialogue";
+import { connect } from 'react-redux'
+import { setSearchModalVisible, setNewEntryModalVisible, setSettingsModalVisible } from '../../actions'
 
 const styles = StyleSheet.create({
   header:{
@@ -20,28 +21,30 @@ const styles = StyleSheet.create({
   }
 });
 
-class HeaderButton extends Component {
-  state= {
-    modalVisible: false
-  };
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
-
+class HeaderButtonContainer extends Component {
   render() {
+    let visible;
+    if (this.props.type === "new") {
+      visible = this.props.newEntryModalVisible;
+    } else if (this.props.type ==="search") {
+      visible = this.props.searchModalVisible;
+    } else if (this.props.type ==="settings") {
+      visible = this.props.settingsModalVisible;
+    } else {
+      visible = false;
+    }
     return (
       <View style={{marginRight: 10 }}>
         <Modal
           animationType={"slide"}
           transparent={false}
-          visible={this.state.modalVisible}
+          visible={visible}
           onRequestClose={() => {console.log("Modal has been closed")}}
         >
           <View>
             <View style = {styles.header}>
               <TouchableOpacity style={{marginRight:30}} onPress={() => {
-                this.setModalVisible(!this.state.modalVisible)
+                this.props.activateModal()
               }}>
                 <Icon
                   name={"arrow-left"}
@@ -59,7 +62,7 @@ class HeaderButton extends Component {
         </Modal>
 
         <TouchableOpacity onPress={() => {
-          this.setModalVisible(true)
+          this.props.activateModal()
         }}>
           <Icon
             name={this.props.iconName}
@@ -73,5 +76,30 @@ class HeaderButton extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    searchModalVisible: state.searchModalVisible,
+    newEntryModalVisible: state.newEntryModalVisible,
+    settingsModalVisible: state.settingsModalVisible
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  activateModal() {
+    if (ownProps.type === "new") {
+      dispatch(setNewEntryModalVisible());
+    } else if (ownProps.type === "search"){
+      dispatch(setSearchModalVisible());
+    } else if (ownProps.type === "settings") {
+      dispatch(setSettingsModalVisible());
+    }
+  }
+});
+
+const HeaderButton = connect(
+  mapStateToProps,
+  mapDispatchToProps)
+(HeaderButtonContainer);
 
 export { HeaderButton };

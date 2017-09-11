@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Button } from 'react-native';
 import { Header, SmallHeader, ColumnGrid} from './common';
+import { connect } from 'react-redux';
+import { toggleViewAll } from '../actions'
+
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
 const styles = StyleSheet.create({
@@ -16,16 +19,9 @@ const styles = StyleSheet.create({
 
 });
 
-class Pantry extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewingAllItems: false,
-    };
-  }
-
+class PantryContainer extends Component {
   render() {
-    if (!this.state.viewingAllItems) {
+    if (!this.props.viewingAllItems) {
       return (
         <View style={styles.container}>
           <Header headerText="Pantry" button1="plus" button1Content="new"/>
@@ -49,7 +45,7 @@ class Pantry extends Component {
 
           <View style={styles.viewAllButton}>
             <Button
-              onPress={() => this.handleViewAll()}
+              onPress={() => this.props.onViewAllClick()}
               title="View All"
             />
           </View>
@@ -60,7 +56,7 @@ class Pantry extends Component {
 
     return (
       <View style={styles.container}>
-        <Header headerText="Pantry" button1="magnify" />
+        <Header headerText="Pantry" button1="magnify" button1Content="search"/>
         <ColumnGrid
           items={pantryData.fullPantry}
           columns={4}
@@ -69,21 +65,30 @@ class Pantry extends Component {
 
         <View style={styles.viewAllButton}>
           <Button
-            onPress={() => this.handleViewAll()}
+            onPress={() => this.props.onViewAllClick()}
             title="< New & Old"
           />
         </View>
       </View>
     );
   }
-  // Place holder for button handler
-  handleViewAll() {
-    this.setState({
-      viewingAllItems: !this.state.viewingAllItems,
-    });
-  }
+};
 
-}
+const mapStateToProps = (state) => {
+  return {
+    viewingAllItems: state.viewingAllItems
+  };
+};
 
+const mapDispatchToProps = (dispatch) => ({
+    onViewAllClick() {
+      dispatch(toggleViewAll());
+    },
+});
+
+const Pantry = connect(
+  mapStateToProps,
+  mapDispatchToProps)
+(PantryContainer);
 
 export default Pantry;

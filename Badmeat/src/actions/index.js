@@ -30,8 +30,26 @@ function getDataFailure() {
 }
 
 
-export const HANDLE_VIEW_ALL  = 'HANDLE_VIEW_ALL';
+export const toggleViewAll  = () => {
+  return {
+    type: 'TOGGLE_VIEW_ALL',
+  }
+};
 
-export function handleViewAll(viewingAll) {
-  return { type: HANDLE_VIEW_ALL, viewingAll};
-}
+export const setSearchModalVisible = () => {
+  return {
+    type: 'SET_SEARCH_MODAL_VISIBLE',
+  }
+};
+
+export const setNewEntryModalVisible = () => {
+  return {
+    type: 'SET_NEW_ENTRY_MODAL_VISIBLE',
+  }
+};
+
+export const setSettingsModalVisible = () => {
+  return {
+    type: 'SET_SETTINGS_MODAL_VISIBLE',
+  }
+};

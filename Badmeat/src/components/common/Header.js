@@ -9,22 +9,29 @@ const Header = (props) => {
   const { textStyle, viewStyle, container } = styles;
   let title1; let title2;
   let content1; let content2;
+  let type1; let type2;
 
   if (props.button1Content === "new") {
+    type1 = "new";
     title1 = "Add New Entry";
     content1 = <NewEntryDialogue/>;
   } else if (props.button1Content === "search") {
-    title1 = "Search"
+    type1 = "search";
+    title1 = "Search";
   } else if (props.button1Content === "settings") {
-    title1 = "Settings"
+    type1 = "settings";
+    title1 = "Settings";
   }
 
   if (props.button2Content === "new") {
+    type2 = "new";
     title2 = "Add New Entry";
     content2 = <NewEntryDialogue/>;
   } else if (props.button2Content === "search") {
+    type2 = "search";
     title2 = "Search"
   } else if (props.button2Content === "settings") {
+    type2 = "settings";
     title2 = "Settings"
   }
 
@@ -38,8 +45,8 @@ const Header = (props) => {
         activeOpacity={0.7}
       />
       <Text style={textStyle}>{props.headerText}</Text>
-      <HeaderButton iconName={props.button1} content={content1} title={title1}/>
-      <HeaderButton iconName={props.button2} content={content2} title={title2}/>
+      <HeaderButton iconName={props.button1} content={content1} title={title1} type={type1}/>
+      <HeaderButton iconName={props.button2} content={content2} title={title2} type={type2}/>
     </View>
   );
 
