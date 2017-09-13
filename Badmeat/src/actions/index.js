@@ -36,9 +36,15 @@ export const toggleViewAll  = () => {
   }
 };
 
-export const setSearchModalVisible = () => {
+export const setDashBoardSearchModalVisible = () => {
   return {
-    type: 'SET_SEARCH_MODAL_VISIBLE',
+    type: 'SET_DASHBOARD_SEARCH_MODAL_VISIBLE',
+  }
+};
+
+export const setDashboardSettingsModalVisible = () => {
+  return {
+    type: 'SET_DASHBOARD_SETTINGS_MODAL_VISIBLE',
   }
 };
 
@@ -48,8 +54,9 @@ export const setNewEntryModalVisible = () => {
   }
 };
 
-export const setSettingsModalVisible = () => {
+export const setPantrySearchModalVisible = () => {
   return {
-    type: 'SET_SETTINGS_MODAL_VISIBLE',
+    type: 'SET_PANTRY_SEARCH_MODAL_VISIBLE'
   }
 };
+

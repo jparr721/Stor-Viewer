@@ -3,9 +3,11 @@ import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE} from '../.
 
 export const initialState = {
   viewingAllItems: false,
-  searchModalVisible: false,
+  dashboardSearchModalVisible: false,
+  dashboardSettingsModalVisible: false,
   newEntryModalVisible: false,
-  settingsModalVisible: false,
+  pantrySearchModalVisible: false,
+
   isFetching: false,
   foodList: [],
   error: false
@@ -15,23 +17,23 @@ function appReducer(state = initialState, action) {
   switch(action.type) {
     case 'TOGGLE_VIEW_ALL':
       return {
-        ...state,
-        viewingAllItems: !state.viewingAllItems
+        ...state, viewingAllItems: !state.viewingAllItems
       };
-    case 'SET_SETTINGS_MODAL_VISIBLE':
-
+    case 'SET_DASHBOARD_SEARCH_MODAL_VISIBLE':
       return {
-        ...state, settingsModalVisible: !state.settingsModalVisible
+        ...state, dashboardSearchModalVisible: !state.dashboardSearchModalVisible
+      };
+    case 'SET_DASHBOARD_SETTINGS_MODAL_VISIBLE':
+      return {
+        ...state, dashboardSettingsModalVisible: !state.dashboardSettingsModalVisible
       };
     case 'SET_NEW_ENTRY_MODAL_VISIBLE':
       return {
-        ...state,
-        newEntryModalVisible: !state.newEntryModalVisible
+        ...state, newEntryModalVisible: !state.newEntryModalVisible
       };
-    case 'SET_SEARCH_MODAL_VISIBLE':
+    case 'SET_PANTRY_SEARCH_MODAL_VISIBLE':
       return {
-        ...state,
-        searchModalVisible: !state.searchModalVisible
+        ...state, pantrySearchModalVisible: !state.pantrySearchModalVisible
       };
     case FETCHING_DATA:
       return {

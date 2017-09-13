@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, StyleSheet, View} from 'react-native';
-import {Card, SmallCard, Header} from './common';
+import { ScrollView, Text, StyleSheet, View, } from 'react-native';
+import { Card, SmallCard, Header, HeaderButton } from './common';
+import { DashboardSearchDialogue, DashboardSettingsDialogue } from './popups'
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +20,10 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Home" button1="magnify" button1Content="search" button2="settings" button2Content="settings"/>
+        <Header headerText="Home" >
+          <DashboardSearchDialogue/>
+          <DashboardSettingsDialogue/>
+        </Header>
         <ScrollView>
           <Card>
             <Text>Dashboard</Text>
@@ -53,5 +57,7 @@ class Dashboard extends Component {
     );
   }
 }
+
+
 
 export default Dashboard;

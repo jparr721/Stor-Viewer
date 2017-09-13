@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Button } from 'react-native';
+import { StyleSheet, View, Text, Modal, Button} from 'react-native';
 import { Header, SmallHeader, ColumnGrid} from './common';
 import { connect } from 'react-redux';
 import { toggleViewAll } from '../actions'
+import { NewEntryDialogue, PantrySearchDialogue } from "./popups/";
 
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
@@ -16,6 +17,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 20
   },
+  header:{
+
+    flexDirection: "row",
+    alignItems:"flex-start",
+    paddingLeft: 10,
+    paddingBottom: 10,
+    paddingTop: 10,
+    backgroundColor:'#42a5f5'
+  },
+  headerText:{
+    color: "#eceff1",
+    fontSize: 20,
+
+  }
 
 });
 
@@ -24,7 +39,10 @@ class PantryContainer extends Component {
     if (!this.props.viewingAllItems) {
       return (
         <View style={styles.container}>
-          <Header headerText="Pantry" button1="plus" button1Content="new"/>
+
+          <Header headerText="Pantry">
+            <NewEntryDialogue/>
+          </Header>
 
           {/* Expiring food view (May add horizontal scrolling) */}
           <SmallHeader headerText="Expiring Soon"/>
@@ -53,10 +71,13 @@ class PantryContainer extends Component {
       );
     }
 
-
+    console.log(this.props.displayNewEntryModal);
     return (
       <View style={styles.container}>
-        <Header headerText="Pantry" button1="magnify" button1Content="search"/>
+
+        <Header headerText="Pantry" >
+          <PantrySearchDialogue/>
+        </Header>
         <ColumnGrid
           items={pantryData.fullPantry}
           columns={4}
@@ -76,14 +97,15 @@ class PantryContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    viewingAllItems: state.viewingAllItems
+    viewingAllItems: state.viewingAllItems,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    onViewAllClick() {
-      dispatch(toggleViewAll());
-    },
+  onViewAllClick() {
+    dispatch(toggleViewAll());
+  },
+
 });
 
 const Pantry = connect(
