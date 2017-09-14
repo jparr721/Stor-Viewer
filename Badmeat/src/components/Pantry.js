@@ -24,7 +24,6 @@ class PantryContainer extends Component {
     if (!this.props.viewingAllItems) {
       return (
         <View style={styles.container}>
-
           <Header headerText="Pantry">
             <NewEntryDialogue/>
           </Header>
