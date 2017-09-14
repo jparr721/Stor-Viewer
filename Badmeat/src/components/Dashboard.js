@@ -36,9 +36,6 @@ class Dashboard extends Component {
           <DashboardSettingsDialogue/>
         </Header>
         <ScrollView>
-          <Card>
-            <Text style={styles.headline}>Dashboard</Text>
-          </Card>
           <View style={styles.smallCardContainer}>
             <SmallCard>
               <Image source={require('../images/lemons.jpg')} style={styles.image}/>
