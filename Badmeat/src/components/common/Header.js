@@ -3,7 +3,6 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import { Icon } from 'react-native-elements';
 
-
 class Header extends Component {
   render() {
     console.log(this.props.button1onPress);
@@ -21,7 +20,6 @@ class Header extends Component {
       </View>
     );
   }
-
 }
 
 const styles = StyleSheet.create({
