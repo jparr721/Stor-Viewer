@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     width: null,
     borderRadius: 4,
   },
-
   headline: {
     paddingLeft: 10,
     color: 'white'
