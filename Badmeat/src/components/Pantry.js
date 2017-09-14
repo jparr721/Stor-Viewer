@@ -17,21 +17,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 20
   },
-  header:{
-
-    flexDirection: "row",
-    alignItems:"flex-start",
-    paddingLeft: 10,
-    paddingBottom: 10,
-    paddingTop: 10,
-    backgroundColor:'#42a5f5'
-  },
-  headerText:{
-    color: "#eceff1",
-    fontSize: 20,
-
-  }
-
 });
 
 class PantryContainer extends Component {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { ScrollView, Text, StyleSheet, View, } from 'react-native';
+import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
 import { Card, SmallCard, Header, HeaderButton } from './common';
 import { DashboardSearchDialogue, DashboardSettingsDialogue } from './popups'
 
@@ -14,42 +14,59 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  image: {
+    flex: 1,
+    height: null,
+    width: null,
+    borderRadius: 4,
+  },
+
+  headline: {
+    paddingLeft: 10,
+    color: 'white'
+  },
 });
 
 class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Home" >
+        <Header headerText="Dashboard" >
           <DashboardSearchDialogue/>
           <DashboardSettingsDialogue/>
         </Header>
         <ScrollView>
           <Card>
-            <Text>Dashboard</Text>
+            <Text style={styles.headline}>Dashboard</Text>
           </Card>
           <View style={styles.smallCardContainer}>
             <SmallCard>
-              <Text>Small Card</Text>
+              <Image source={require('../images/lemons.jpg')} style={styles.image}/>
+              <Text style={styles.headline}>New Deals</Text>
             </SmallCard>
             <SmallCard>
-              <Text>Small Card</Text>
-            </SmallCard>
-          </View>
-          <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Text>Small Card</Text>
-            </SmallCard>
-            <SmallCard>
-              <Text>Small Card</Text>
+              <Image source={require('../images/peppers.jpg')} style={styles.image}/>
+              <Text style={styles.headline}>Recipes</Text>
             </SmallCard>
           </View>
           <View style={styles.smallCardContainer}>
             <SmallCard>
-              <Text>Small Card</Text>
+              <Image source={require('../images/potatoes.jpg')} style={styles.image}/>
+              <Text style={styles.headline}>My List</Text>
             </SmallCard>
             <SmallCard>
-              <Text>Small Card</Text>
+              <Image source={require('../images/barbecue.jpg')} style={styles.image}/>
+              <Text style={styles.headline}>Share</Text>
+            </SmallCard>
+          </View>
+          <View style={styles.smallCardContainer}>
+            <SmallCard>
+              <Image source={require('../images/soup.jpg')} style={styles.image}/>
+              <Text style={styles.headline}>Track Savings</Text>
+            </SmallCard>
+            <SmallCard>
+              <Image source={require('../images/orange.jpg')} style={styles.image}/>
+              <Text style={styles.headline}>Shop Online</Text>
             </SmallCard>
           </View>
         </ScrollView>
