@@ -5,8 +5,10 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  View
+  View,
+  Image
 } from 'react-native';
+import FaBeer from 'react-icons/lib/fa/beer'
 import Camera from 'react-native-camera';
 
 class CameraTab extends Component {
@@ -18,8 +20,15 @@ class CameraTab extends Component {
             this.camera = cam;
           }}
           style={styles.preview}
-          aspect={Camera.constants.Aspect.fill}>
-          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+          aspect={Camera.constants.Aspect.fill}
+          captureTarget={this.state.camera.captureTarget}
+          type={this.state.camera.type}
+          flashMode={this.state.camera.flashMode}
+          onFocusChanged={() => {}}
+          onZoomChanged={() => {}}
+          defaultTouchToFocus
+          mirrorImage={false}
+          >
         </Camera>
       </View>
     );
