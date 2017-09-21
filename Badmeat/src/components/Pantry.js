@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import { StyleSheet, View, Text, Modal, Button} from 'react-native';
-import { Header, SmallHeader, ColumnGrid} from './common';
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, Modal, Button } from 'react-native';
+import { Header, SmallHeader, ColumnGrid } from './common';
 import { connect } from 'react-redux';
 import { toggleViewAll } from '../actions'
 import { NewEntryDialogue, PantrySearchDialogue } from "./popups/";
@@ -25,14 +25,14 @@ class PantryContainer extends Component {
       return (
         <View style={styles.container}>
           <Header headerText="Pantry">
-            <NewEntryDialogue/>
+            <NewEntryDialogue />
           </Header>
 
           {/* Expiring food view (May add horizontal scrolling) */}
           <SmallHeader headerText="Expiring Soon"/>
           <ColumnGrid
             items={pantryData.expiringFood}
-            columns={4}
+            columns={3}
             vertical={true}
           />
 
@@ -40,9 +40,8 @@ class PantryContainer extends Component {
           <SmallHeader headerText="Recently Added"/>
           <ColumnGrid
             items={pantryData.newPantryItems}
-            columns={4}
+            columns={3}
             vertical={true}
-            style={{}}
           />
 
           <View style={styles.viewAllButton}>
@@ -54,17 +53,17 @@ class PantryContainer extends Component {
         </View>
       );
     }
-
-    console.log(this.props.displayNewEntryModal);
+    
     return (
       <View style={styles.container}>
 
-        <Header headerText="Pantry" >
-          <PantrySearchDialogue/>
+        <Header headerText="Pantry">
+          <PantrySearchDialogue />
+          <NewEntryDialogue />
         </Header>
         <ColumnGrid
           items={pantryData.fullPantry}
-          columns={4}
+          columns={3}
           vertical={true}
         />
 
@@ -77,7 +76,7 @@ class PantryContainer extends Component {
       </View>
     );
   }
-};
+}
 
 const mapStateToProps = (state) => {
   return {

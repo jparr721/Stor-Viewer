@@ -51,7 +51,7 @@ class DashboardSettingsDialogueContainer extends Component {
               <Text style={styles.headerText}>Settings</Text>
             </View>
             <View style={{padding: 10}}>
-              <Text>Change those settings yo!</Text>
+              <Text>Change your app settings!</Text>
             </View>
           </View>
         </Modal>
