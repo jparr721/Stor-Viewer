@@ -51,7 +51,7 @@ class PantrySearchDialogueContainer extends Component {
               <Text style={styles.headerText}>Search</Text>
             </View>
             <View style={{padding: 10}}>
-              <Text>Bro what you need?</Text>
+              <Text>Need to find a pantry item?</Text>
             </View>
           </View>
         </Modal>
