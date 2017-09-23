@@ -51,7 +51,7 @@ class NewEntryDialogueContainer extends Component {
               <Text style={styles.headerText}>Add a New Entry</Text>
             </View>
             <View style={{padding: 10}}>
-              <Text>Yooooo</Text>
+              <Text>Enter item details or use the camera!</Text>
             </View>
           </View>
         </Modal>

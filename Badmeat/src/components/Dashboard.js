@@ -37,7 +37,7 @@ class Dashboard extends Component {
         <ScrollView>
           <View style={styles.smallCardContainer}>
             <SmallCard>
-              <Image source={require('../images/lemons.jpg')} style={styles.image}/>
+              <Image source={require('../images/lemons.jpg')} style={styles.image} />
               <Text style={styles.headline}>New Deals</Text>
             </SmallCard>
             <SmallCard>
