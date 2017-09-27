@@ -53,7 +53,7 @@ class PantryContainer extends Component {
         </View>
       );
     }
-    
+
     return (
       <View style={styles.container}>
 
