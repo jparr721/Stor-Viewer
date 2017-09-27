@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
 import { Card, SmallCard, Header, HeaderButton } from './common';
 import { Tile } from 'react-native-elements';
+
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
 });
+
 class Notifications extends Component {
   render() {
     return (
@@ -47,7 +49,7 @@ class Notifications extends Component {
           </View>
           <View style={styles.smallCardContainer}>
             <SmallCard>
-              <Image source={require('../images/piggybank.jpeg')} style={styles.image}/>
+              <Image source={require('../images/piggybank.jpg')} style={styles.image}/>
               <Text style={styles.headline}>Your monthly savings report is in!</Text>
             </SmallCard>
           </View>
@@ -62,4 +64,5 @@ class Notifications extends Component {
     );
   }
 }
+
 export default Notifications;
