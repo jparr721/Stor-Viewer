@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
-import { Card, SmallCard, Header, HeaderButton } from './common';
-import { DashboardSearchDialogue, DashboardSettingsDialogue } from './popups'
+import { ScrollView, Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import { Card, SmallCard } from './common';
+import { DashboardSearchDialogue, DashboardSettingsDialogue, UserMenu } from './popups'
+import { Avatar, Icon  } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,11 +19,18 @@ const styles = StyleSheet.create({
     flex: 1,
     height: null,
     width: null,
-    borderRadius: 4,
+    borderRadius: 2,
   },
   headline: {
-    paddingLeft: 10,
-    color: 'white'
+    paddingLeft: 5,
+    paddingBottom: 2,
+    fontSize: 16,
+    color: '#ECEFF1'
+  },
+  pageTitleStyle: {
+    fontSize: 32,
+    fontWeight: '700',
+    flex: 1,
   },
 });
 
@@ -30,40 +38,50 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Dashboard" >
+        <View style={{flexDirection: 'row', marginLeft:10, paddingBottom: 20}}>
+          <UserMenu />
+          <View style= {{alignItems: 'center', flex:1}}>
+            <Text style={styles.pageTitleStyle}>Dashboard</Text>
+          </View>
           <DashboardSearchDialogue/>
-          <DashboardSettingsDialogue/>
-        </Header>
+        </View>
         <ScrollView>
           <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/lemons.jpg')} style={styles.image} />
-              <Text style={styles.headline}>New Deals</Text>
-            </SmallCard>
-            <SmallCard>
-              <Image source={require('../images/peppers.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Recipes</Text>
-            </SmallCard>
+
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/pizza.jpg')} style={styles.image}/>
+                <Text style={styles.headline}>Recipes</Text>
+              </SmallCard>
+            </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/potatoes.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>My List</Text>
-            </SmallCard>
-            <SmallCard>
-              <Image source={require('../images/barbecue.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Share</Text>
-            </SmallCard>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/peppers.jpg')} style={styles.image}/>
+                <Text style={styles.headline}>My List</Text>
+              </SmallCard>
+            </TouchableOpacity>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/barbecue.jpg')} style={styles.image}/>
+                <Text style={styles.headline}>Share</Text>
+              </SmallCard>
+            </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/soup.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Track Savings</Text>
-            </SmallCard>
-            <SmallCard>
-              <Image source={require('../images/orange.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Shop Online</Text>
-            </SmallCard>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/apples.jpg')} style={styles.image}/>
+                <Text style={styles.headline}>Track Savings</Text>
+              </SmallCard>
+            </TouchableOpacity>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/orange.jpg')} style={styles.image}/>
+                <Text style={styles.headline}>Stores & Deals</Text>
+              </SmallCard>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>

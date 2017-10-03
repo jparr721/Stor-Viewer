@@ -11,9 +11,9 @@ const SmallCard = (props) => {
 
 const styles = StyleSheet.create({
   containerStyle: {
-    borderRadius: 4,
+    borderRadius: 2,
     borderColor: '#000',
-    backgroundColor: '#abafb5',
+    backgroundColor: '#263238',
     borderBottomWidth: 0,
     margin: 10,
     flex: 1,

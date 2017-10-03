@@ -7,6 +7,7 @@ export const initialState = {
   dashboardSettingsModalVisible: false,
   newEntryModalVisible: false,
   pantrySearchModalVisible: false,
+  userSettingsModalVisible: false,
 
   isFetching: false,
   foodList: [],
@@ -34,6 +35,10 @@ function appReducer(state = initialState, action) {
     case 'SET_PANTRY_SEARCH_MODAL_VISIBLE':
       return {
         ...state, pantrySearchModalVisible: !state.pantrySearchModalVisible
+      };
+    case 'SET_USER_SETTINGS_MODAL_VISIBLE':
+      return {
+        ...state, userSettingsModalVisible: !state.userSettingsModalVisible
       };
     case FETCHING_DATA:
       return {
