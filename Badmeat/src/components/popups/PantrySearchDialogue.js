@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 class PantrySearchDialogueContainer extends Component {
   render() {
     return (
-      <View style={{marginRight: 10}}>
+      <View>
         <Modal
           animationType={"slide"}
           transparent={false}

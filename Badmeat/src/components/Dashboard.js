@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { ScrollView, Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import { Card, SmallCard } from './common';
+import { Card, SmallCard, Header } from './common';
 import { DashboardSearchDialogue, DashboardSettingsDialogue, UserMenu } from './popups'
 import { Avatar, Icon  } from 'react-native-elements';
 
@@ -38,13 +38,10 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', marginLeft:10, paddingBottom: 20}}>
-          <UserMenu />
-          <View style= {{alignItems: 'center', flex:1}}>
-            <Text style={styles.pageTitleStyle}>Dashboard</Text>
-          </View>
+        <UserMenu />
+        <Header headerText="Dashboard">
           <DashboardSearchDialogue/>
-        </View>
+        </Header>
         <ScrollView>
           <View style={styles.smallCardContainer}>
 
@@ -88,7 +85,5 @@ class Dashboard extends Component {
     );
   }
 }
-
-
 
 export default Dashboard;

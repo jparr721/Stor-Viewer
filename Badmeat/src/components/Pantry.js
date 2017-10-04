@@ -58,7 +58,6 @@ class PantryContainer extends Component {
       <View style={styles.container}>
 
         <Header headerText="Pantry">
-          <PantrySearchDialogue />
           <NewEntryDialogue />
         </Header>
         <ColumnGrid

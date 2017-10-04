@@ -2,10 +2,10 @@
  * Created by deonj on 8/24/2017.
  */
 import React, {Component} from 'react';
-import {Modal, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
-import {Icon} from 'react-native-elements'
-import {setDashBoardSearchModalVisible} from '../../actions/index'
-import {connect} from 'react-redux';
+import { Modal, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Icon, Avatar } from 'react-native-elements'
+import { setDashBoardSearchModalVisible } from '../../actions/index'
+import { connect } from 'react-redux';
 
 const styles = StyleSheet.create({
   header: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 class DashboardSearchDialogueContainer extends Component {
   render() {
     return (
-      <View style={{marginRight: 10}}>
+      <View>
         <Modal
           animationType={"slide"}
           transparent={false}
@@ -55,16 +55,13 @@ class DashboardSearchDialogueContainer extends Component {
             </View>
           </View>
         </Modal>
-        <TouchableOpacity onPress={() => {
-          this.props.displayDashBoardSearchModal()
-        } }>
-          <Icon
-            name="magnify"
-            type="material-community"
-            size={28}
-            color="#eceff1"
-          />
-        </TouchableOpacity>
+        <Avatar
+          small
+          rounded
+          icon={{name: 'search'}}
+          onPress={() => this.props.displayDashBoardSearchModal()}
+          activeOpacity={0.7}
+        />
       </View>
 
     );

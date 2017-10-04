@@ -60,13 +60,7 @@ class User extends Component {
             </View>
           </View>
         </Modal>
-        <Avatar
-          small
-          rounded
-          icon={{name: 'account-circle'}}
-          onPress={() => this.props.displayUserMenu()}
-          activeOpacity={0.7}
-        />
+
       </View>
     )
   }
