@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Modal, Button } from 'react-native';
+import { StyleSheet, View, Text, Modal } from 'react-native';
 import { Header, SmallHeader, ColumnGrid } from './common';
 import { connect } from 'react-redux';
 import { toggleViewAll } from '../actions'
 import { NewEntryDialogue, PantrySearchDialogue } from "./popups/";
-import { SearchBar } from 'react-native-elements';
+import { SearchBar, Button } from 'react-native-elements';
 
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
   },
   viewAllButton: {
     alignItems: 'center',
-    margin: 20
+    margin: 20,
+    flexDirection:'row'
   },
 });
 
@@ -58,8 +59,11 @@ class PantryContainer extends Component {
 
           <View style={styles.viewAllButton}>
             <Button
+              raised
               onPress={() => this.props.onViewAllClick()}
-              title="View All"
+              title="VIEW ALL"
+              containerViewStyle={{flex:1}}
+              backgroundColor='#FFC107'
             />
           </View>
         </View>
@@ -92,8 +96,11 @@ class PantryContainer extends Component {
 
         <View style={styles.viewAllButton}>
           <Button
+            raised
             onPress={() => this.props.onViewAllClick()}
-            title="< New & Old"
+            title="NEW & OLD"
+            containerViewStyle={{flex:1}}
+            backgroundColor='#FFC107'
           />
         </View>
       </View>
