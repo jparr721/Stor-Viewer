@@ -24,8 +24,20 @@ const styles = StyleSheet.create({
 class User extends Component {
 
   render() {
+
+    const menu = [
+      {
+        title: 'Account',
+        icon: 'account-circle'
+      },
+      {
+        title: 'Other',
+        icon: 'accessibility'
+      }
+    ]
+
     return (
-      <View style={{marginRight: 10}}>
+      <View>
         <Modal
           animationType={"slide"}
           transparent={false}
@@ -48,15 +60,18 @@ class User extends Component {
               </TouchableOpacity>
               <Text style={styles.headerText}>User Account</Text>
             </View>
-            <View style={{flexDirection: 'row',padding: 10}}>
-              <Avatar
-                small
-                rounded
-                icon={{name: 'account-circle'}}
-                onPress={() => console.log('pressed')}
-                activeOpacity={0.7}
-              />
-              <Text>Account</Text>
+            <View>
+              <List>
+                {
+                  menu.map((item,i) => (
+                    <ListItem
+                      key={i}
+                      title={item.title}
+                      leftIcon={{name: item.icon}}
+                    />
+                  ))
+                }
+              </List>
             </View>
           </View>
         </Modal>

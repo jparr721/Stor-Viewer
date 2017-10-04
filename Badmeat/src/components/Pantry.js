@@ -34,7 +34,7 @@ class PantryContainer extends Component {
             clearIcon
             lightTheme
             onChangeText={() => console.log('changed')}
-            placeHolder='Search for an item...'
+            placeholder='Search for an item...'
             containerStyle={{backgroundColor: '#42a5f5',
                              borderTopWidth: 0,
                              borderBottomWidth: 0,}}
@@ -77,7 +77,7 @@ class PantryContainer extends Component {
           clearIcon
           lightTheme
           onChangeText={() => console.log('changed')}
-          placeHolder='Search for an item...'
+          placeholder='Search for an item...'
           containerStyle={{backgroundColor: '#42a5f5',
                            borderTopWidth: 0,
                            borderBottomWidth: 0,}}

@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import { Modal, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
-import { Icon, Avatar } from 'react-native-elements'
+import { Icon, Avatar, SearchBar } from 'react-native-elements'
 import { setDashBoardSearchModalVisible } from '../../actions/index'
 import { connect } from 'react-redux';
 
@@ -51,6 +51,15 @@ class DashboardSearchDialogueContainer extends Component {
               <Text style={styles.headerText}>Search</Text>
             </View>
             <View style={{padding: 10}}>
+              <SearchBar
+                clearIcon
+                lightTheme
+                onChangeText={() => console.log('changed')}
+                placeholder='Search...'
+                containerStyle={{backgroundColor: 'white',
+                                 borderTopWidth: 0,
+                                 borderBottomWidth: 0,}}
+              />
               <Text>Search for items anywhere in the app</Text>
             </View>
           </View>
