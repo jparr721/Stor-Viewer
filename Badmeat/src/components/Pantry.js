@@ -4,6 +4,7 @@ import { Header, SmallHeader, ColumnGrid } from './common';
 import { connect } from 'react-redux';
 import { toggleViewAll } from '../actions'
 import { NewEntryDialogue, PantrySearchDialogue } from "./popups/";
+import { SearchBar } from 'react-native-elements';
 
 const pantryData = require('../../dummy_data/dummy_data_1.json');
 
@@ -27,6 +28,17 @@ class PantryContainer extends Component {
           <Header headerText="Pantry">
             <NewEntryDialogue />
           </Header>
+
+          <SearchBar
+            round
+            clearIcon
+            lightTheme
+            onChangeText={() => console.log('changed')}
+            placeHolder='Search for an item...'
+            containerStyle={{backgroundColor: '#42a5f5',
+                             borderTopWidth: 0,
+                             borderBottomWidth: 0,}}
+          />
 
           {/* Expiring food view (May add horizontal scrolling) */}
           <SmallHeader headerText="Expiring Soon"/>
@@ -60,6 +72,18 @@ class PantryContainer extends Component {
         <Header headerText="Pantry">
           <NewEntryDialogue />
         </Header>
+        <SearchBar
+          round
+          clearIcon
+          lightTheme
+          onChangeText={() => console.log('changed')}
+          placeHolder='Search for an item...'
+          containerStyle={{backgroundColor: '#42a5f5',
+                           borderTopWidth: 0,
+                           borderBottomWidth: 0,}}
+        />
+
+        <SmallHeader headerText="All Items"/>
         <ColumnGrid
           items={pantryData.fullPantry}
           columns={3}
