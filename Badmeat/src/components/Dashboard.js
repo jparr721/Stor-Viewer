@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
     flex: 1,
-    backgroundColor: '#42a5f5',
+    backgroundColor: '#424242',
   },
   smallCardContainer: {
     flex: 0,
@@ -16,21 +16,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    flex: 1,
     height: null,
     width: null,
     borderRadius: 2,
+    flex:1
+  },
+  backdropView: {
+    height: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    borderRadius: 2,
   },
   headline: {
-    paddingLeft: 5,
-    paddingBottom: 2,
-    fontSize: 16,
-    color: '#ECEFF1'
-  },
-  pageTitleStyle: {
-    fontSize: 32,
-    fontWeight: '700',
-    flex: 1,
+    fontSize: 24,
+    color: 'white',
   },
 });
 
@@ -47,36 +47,51 @@ class Dashboard extends Component {
 
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/pizza.jpg')} style={styles.image}/>
-                <Text style={styles.headline}>Recipes</Text>
+                <Image source={require('../images/pizza.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>RECIPES</Text>
+                  </View>
+                </Image>
               </SmallCard>
             </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/peppers.jpg')} style={styles.image}/>
-                <Text style={styles.headline}>My List</Text>
+                <Image source={require('../images/peppers.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>MY LIST</Text>
+                  </View>
+                </Image>
               </SmallCard>
             </TouchableOpacity>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/barbecue.jpg')} style={styles.image}/>
-                <Text style={styles.headline}>Share</Text>
+                <Image source={require('../images/barbecue.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>SHARE</Text>
+                  </View>
+                </Image>
               </SmallCard>
             </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/apples.jpg')} style={styles.image}/>
-                <Text style={styles.headline}>Track Savings</Text>
+                <Image source={require('../images/apples.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>SAVINGS</Text>
+                  </View>
+                </Image>
               </SmallCard>
             </TouchableOpacity>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/orange.jpg')} style={styles.image}/>
-                <Text style={styles.headline}>Stores & Deals</Text>
+                <Image source={require('../images/orange.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>STORES</Text>
+                  </View>
+                </Image>
               </SmallCard>
             </TouchableOpacity>
           </View>

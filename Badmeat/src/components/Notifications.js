@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
 import { Card, SmallCard, Header, HeaderButton } from './common';
-import { Tile } from 'react-native-elements';
+import { List, ListItem, Avatar, Button } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
     flex: 1,
-    backgroundColor: '#42a5f5',
+    backgroundColor: '#424242',
   },
   smallCardContainer: {
     flex: 1,
@@ -26,43 +27,73 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: 'white'
   },
+  notificationsList: {
+    marginLeft: 10,
+    marginRight:10
+  },
+  clearNotificationsButton: {
+    alignItems: 'center',
+    margin: 20,
+    flexDirection:'row'
+  },
 });
 
-class Notifications extends Component {
+class NotificationsContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Header headerText="Notifications" >
+          <Avatar
+            small
+            rounded
+            icon={{name: 'search', size:24}}
+            overlayContainerStyle={{backgroundColor: '#757575'}}
+            onPress={() => this.props.displayDashBoardSearchModal()}
+            activeOpacity={0.7}
+          />
         </Header>
-        <ScrollView>
-          <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/store.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>It's time to go shopping!</Text>
-            </SmallCard>
-          </View>
-          <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/staples.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>You're running low on staple foods!</Text>
-            </SmallCard>
-          </View>
-          <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/piggybank.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Your monthly savings report is in!</Text>
-            </SmallCard>
-          </View>
-          <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/facebook.png')} style={styles.image}/>
-              <Text style={styles.headline}>Integrate with Facebook!</Text>
-            </SmallCard>
-          </View>
+        <ScrollView style={styles.notificationsList}>
+          <List>
+            {
+              this.props.notificationsList.notifications.map((item,i) => (
+                <ListItem
+                  key={i}
+                  title={item.title}
+                />
+              ))
+            }
+          </List>
         </ScrollView>
+        <View style={styles.clearNotificationsButton}>
+          <Button
+            raised
+            onPress={() => console.log("yo")}
+            title="CLEAR NOTIFICATIONS"
+            containerViewStyle={{flex:1}}
+            backgroundColor='#FFA000'
+          />
+        </View>
       </View>
     );
   }
 }
+
+
+const mapStateToProps = (state) => {
+  return {
+    notificationsList: state.notificationsList,
+  }
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  displayDashBoardSearchModal() {
+    dispatch(setDashBoardSearchModalVisible());
+  }
+});
+
+const Notifications = connect(
+  mapStateToProps,
+  mapDispatchToProps)
+  (NotificationsContainer);
 
 export default Notifications;

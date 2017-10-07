@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: null,
     width: null,
-    borderRadius: 0,
+    borderRadius: 2,
   },
   headline: {
     color: 'white',

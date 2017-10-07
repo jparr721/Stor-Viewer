@@ -58,7 +58,8 @@ class NewEntryDialogueContainer extends Component {
         <Avatar
           small
           rounded
-          icon={{name: 'add'}}
+          icon={{name: 'add', size:24}}
+          overlayContainerStyle={{backgroundColor: '#757575'}}
           onPress={() => this.props.displayNewEntryModal()}
           activeOpacity={0.7}
         />

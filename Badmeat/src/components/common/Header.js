@@ -12,7 +12,8 @@ class HeaderContainer extends Component {
         <Avatar
           small
           rounded
-          icon={{name: 'account-circle'}}
+          icon={{name: 'account-circle', size: 24}}
+          overlayContainerStyle={{backgroundColor: '#FFB300'}}
           onPress={() => this.props.displayUserMenu()}
           activeOpacity={0.7}
         />
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     flex: 1,
+    color: 'white',
   },
 });
 

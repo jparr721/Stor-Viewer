@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 const styles = StyleSheet.create({
   header: {
-
     flexDirection: "row",
     alignItems: "flex-start",
     paddingLeft: 10,
@@ -20,6 +19,9 @@ const styles = StyleSheet.create({
   headerText: {
     color: "#eceff1",
     fontSize: 20,
+  },
+  pageContent: {
+    margin:10
   }
 
 });
@@ -50,7 +52,7 @@ class DashboardSearchDialogueContainer extends Component {
               </TouchableOpacity>
               <Text style={styles.headerText}>Search</Text>
             </View>
-            <View style={{padding: 10}}>
+            <View>
               <SearchBar
                 clearIcon
                 lightTheme
@@ -60,14 +62,17 @@ class DashboardSearchDialogueContainer extends Component {
                                  borderTopWidth: 0,
                                  borderBottomWidth: 0,}}
               />
-              <Text>Search for items anywhere in the app</Text>
+              <View style={styles.pageContent}>
+                <Text>Search for items anywhere in the app</Text>
+              </View>
             </View>
           </View>
         </Modal>
         <Avatar
           small
           rounded
-          icon={{name: 'search'}}
+          icon={{name: 'search', size:24}}
+          overlayContainerStyle={{backgroundColor: '#757575'}}
           onPress={() => this.props.displayDashBoardSearchModal()}
           activeOpacity={0.7}
         />
