@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import {Modal, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
-import {Icon} from 'react-native-elements'
+import { Icon, Avatar } from 'react-native-elements'
 import {setNewEntryModalVisible} from '../../actions/index'
 import {connect} from 'react-redux';
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 class NewEntryDialogueContainer extends Component {
   render() {
     return (
-      <View style={{marginRight: 10}}>
+      <View>
         <Modal
           animationType={"slide"}
           transparent={false}
@@ -55,16 +55,14 @@ class NewEntryDialogueContainer extends Component {
             </View>
           </View>
         </Modal>
-        <TouchableOpacity onPress={() => {
-          this.props.displayNewEntryModal()
-        } }>
-          <Icon
-            name="plus"
-            type="material-community"
-            size={28}
-            color="#eceff1"
-          />
-        </TouchableOpacity>
+        <Avatar
+          small
+          rounded
+          icon={{name: 'add', size:24}}
+          overlayContainerStyle={{backgroundColor: '#757575'}}
+          onPress={() => this.props.displayNewEntryModal()}
+          activeOpacity={0.7}
+        />
       </View>
 
     );

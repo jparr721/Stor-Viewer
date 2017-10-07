@@ -86,7 +86,7 @@ const Router = TabNavigator(
 
       showIcon: true,
       showLabel: false,
-      activeTintColor: '#42a5f5',
+      activeTintColor: '#FFA000',
     },
   }
 );

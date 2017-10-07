@@ -60,3 +60,8 @@ export const setPantrySearchModalVisible = () => {
   }
 };
 
+export const setUserSettingsModalVisible = () => {
+  return {
+    type: 'SET_USER_SETTINGS_MODAL_VISIBLE'
+  }
+};

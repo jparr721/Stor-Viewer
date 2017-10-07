@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
-import { Card, SmallCard, Header, HeaderButton } from './common';
-import { DashboardSearchDialogue, DashboardSettingsDialogue } from './popups'
+import { ScrollView, Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import { Card, SmallCard, Header } from './common';
+import { DashboardSearchDialogue, DashboardSettingsDialogue, UserMenu } from './popups'
+import { Avatar, Icon  } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
     flex: 1,
-    backgroundColor: '#42a5f5',
+    backgroundColor: '#424242',
   },
   smallCardContainer: {
     flex: 0,
@@ -15,14 +16,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    flex: 1,
     height: null,
     width: null,
-    borderRadius: 4,
+    borderRadius: 2,
+    flex:1
+  },
+  backdropView: {
+    height: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    borderRadius: 2,
   },
   headline: {
-    paddingLeft: 10,
-    color: 'white'
+    fontSize: 24,
+    color: 'white',
   },
 });
 
@@ -30,47 +38,67 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Dashboard" >
+        <UserMenu />
+        <Header headerText="Dashboard">
           <DashboardSearchDialogue/>
-          <DashboardSettingsDialogue/>
         </Header>
         <ScrollView>
           <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/lemons.jpg')} style={styles.image} />
-              <Text style={styles.headline}>New Deals</Text>
-            </SmallCard>
-            <SmallCard>
-              <Image source={require('../images/peppers.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Recipes</Text>
-            </SmallCard>
+
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/pizza.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>RECIPES</Text>
+                  </View>
+                </Image>
+              </SmallCard>
+            </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/potatoes.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>My List</Text>
-            </SmallCard>
-            <SmallCard>
-              <Image source={require('../images/barbecue.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Share</Text>
-            </SmallCard>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/peppers.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>MY LIST</Text>
+                  </View>
+                </Image>
+              </SmallCard>
+            </TouchableOpacity>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/barbecue.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>SHARE</Text>
+                  </View>
+                </Image>
+              </SmallCard>
+            </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
-            <SmallCard>
-              <Image source={require('../images/soup.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Track Savings</Text>
-            </SmallCard>
-            <SmallCard>
-              <Image source={require('../images/orange.jpg')} style={styles.image}/>
-              <Text style={styles.headline}>Shop Online</Text>
-            </SmallCard>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/apples.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>SAVINGS</Text>
+                  </View>
+                </Image>
+              </SmallCard>
+            </TouchableOpacity>
+            <TouchableOpacity style ={{flex:1}}>
+              <SmallCard>
+                <Image source={require('../images/orange.jpg')} style={styles.image}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>STORES</Text>
+                  </View>
+                </Image>
+              </SmallCard>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
     );
   }
 }
-
-
 
 export default Dashboard;

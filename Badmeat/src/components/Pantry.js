@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Modal, Button } from 'react-native';
-import { Header, SmallHeader, ColumnGrid } from './common';
+import { StyleSheet, View, Text, Modal, ScrollView } from 'react-native';
+import { Header, SmallHeader, ColumnGrid, SmallCard } from './common';
 import { connect } from 'react-redux';
 import { toggleViewAll } from '../actions'
 import { NewEntryDialogue, PantrySearchDialogue } from "./popups/";
+import { SearchBar, Button } from 'react-native-elements';
 
-const pantryData = require('../../dummy_data/dummy_data_1.json');
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
     flex: 1,
-    backgroundColor: '#42a5f5',
+    backgroundColor: '#424242',
   },
   viewAllButton: {
     alignItems: 'center',
-    margin: 20
+    margin: 20,
+    flexDirection:'row'
+  },
+  headline: {
+    color: 'white',
   },
 });
 
 class PantryContainer extends Component {
   render() {
+
     if (!this.props.viewingAllItems) {
       return (
         <View style={styles.container}>
@@ -28,26 +33,32 @@ class PantryContainer extends Component {
             <NewEntryDialogue />
           </Header>
 
+          <SearchBar
+            round
+            clearIcon
+            lightTheme
+            onChangeText={() => console.log('changed')}
+            placeholder='Search for an item...'
+            containerStyle={{backgroundColor: '#424242',
+                             borderTopWidth: 0,
+                             borderBottomWidth: 0,}}
+          />
+
           {/* Expiring food view (May add horizontal scrolling) */}
           <SmallHeader headerText="Expiring Soon"/>
           <ColumnGrid
-            items={pantryData.expiringFood}
-            columns={3}
-            vertical={true}
-          />
-
-          {/* Recently added food view (May add horizontal scrolling) */}
-          <SmallHeader headerText="Recently Added"/>
-          <ColumnGrid
-            items={pantryData.newPantryItems}
+            items={this.props.expiringFoodItems}
             columns={3}
             vertical={true}
           />
 
           <View style={styles.viewAllButton}>
             <Button
+              raised
               onPress={() => this.props.onViewAllClick()}
-              title="View All"
+              title="VIEW ALL"
+              containerViewStyle={{flex:1}}
+              backgroundColor='#FFA000'
             />
           </View>
         </View>
@@ -58,19 +69,31 @@ class PantryContainer extends Component {
       <View style={styles.container}>
 
         <Header headerText="Pantry">
-          <PantrySearchDialogue />
           <NewEntryDialogue />
         </Header>
-        <ColumnGrid
-          items={pantryData.fullPantry}
-          columns={3}
-          vertical={true}
+        <SearchBar
+          round
+          clearIcon
+          lightTheme
+          onChangeText={() => console.log('changed')}
+          placeholder='Search for an item...'
+          containerStyle={{backgroundColor: '#424242',
+                           borderTopWidth: 0,
+                           borderBottomWidth: 0,}}
         />
+
+        <SmallHeader headerText="All Items"/>
+        <ScrollView>
+        
+        </ScrollView>
 
         <View style={styles.viewAllButton}>
           <Button
+            raised
             onPress={() => this.props.onViewAllClick()}
-            title="< New & Old"
+            title="NEW & OLD"
+            containerViewStyle={{flex:1}}
+            backgroundColor='#FFA000'
           />
         </View>
       </View>
@@ -81,6 +104,8 @@ class PantryContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     viewingAllItems: state.viewingAllItems,
+    expiringFoodItems: state.expiringFoodItems,
+    fullPantryItems: state.fullPantryItems,
   };
 };
 

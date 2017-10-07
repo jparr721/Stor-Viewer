@@ -2,20 +2,24 @@ import React, {Component}  from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import { Icon } from 'react-native-elements';
+import {connect} from 'react-redux';
+import { setUserSettingsModalVisible } from '../../actions';
 
-class Header extends Component {
+class HeaderContainer extends Component {
   render() {
-    console.log(this.props.button1onPress);
     return (
       <View style={styles.container}>
         <Avatar
           small
           rounded
-          icon={{name: 'account-circle'}}
-          onPress={() => console.log('Works!')}
+          icon={{name: 'account-circle', size: 24}}
+          overlayContainerStyle={{backgroundColor: '#FFB300'}}
+          onPress={() => this.props.displayUserMenu()}
           activeOpacity={0.7}
         />
-        <Text style={styles.textStyle}>{this.props.headerText}</Text>
+        <View style={styles.textWrapper}>
+          <Text style={styles.textStyle}>{this.props.headerText}</Text>
+        </View>
         {this.props.children}
       </View>
     );
@@ -24,24 +28,40 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
     flexDirection: 'row',
-    // height: 60,
-    // flex: 1,
-    paddingLeft: 10,
-
+    paddingBottom: 20,
+    marginLeft: 10,
+    marginRight: 10
   },
-  viewStyle: {
-    // flex: 1,
+  textWrapper: {
+    alignItems: 'center',
+    flex:1,
+    height:42
   },
   textStyle: {
-    paddingLeft: 10,
     fontSize: 32,
     fontWeight: '700',
     flex: 1,
+    color: 'white',
   },
 });
-function handle() {
-  return (this);
-}
+
+const mapStateToProps = (state) => {
+  return {
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  displayUserMenu() {
+    dispatch(setUserSettingsModalVisible());
+  }
+
+});
+
+const Header = connect(
+  mapStateToProps,
+  mapDispatchToProps)
+(HeaderContainer);
+
+
 export { Header };

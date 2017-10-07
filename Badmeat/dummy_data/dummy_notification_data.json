@@ -1,0 +1,34 @@
+{
+  "notifications": [
+    {
+      "title": "Time to go shopping!"
+    },
+    {
+      "title": "You are running low on staple foods!"
+    },
+    {
+      "title": "Your monthly savings report is in!"
+    },
+    {
+      "title": "New, integrate with Facebook!"
+    },
+    {
+      "title": "Test1"
+    },
+    {
+      "title": "Test2"
+    },
+    {
+      "title": "Test3"
+    },
+    {
+      "title": "Test4"
+    },
+    {
+      "title": "Test5"
+    },
+    {
+      "title": "Test6"
+    }
+  ],
+}

@@ -2,14 +2,13 @@
  * Created by deonj on 8/24/2017.
  */
 import React, {Component} from 'react';
-import {Modal, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
-import {Icon} from 'react-native-elements'
-import {setDashBoardSearchModalVisible} from '../../actions/index'
-import {connect} from 'react-redux';
+import { Modal, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Icon, Avatar, SearchBar } from 'react-native-elements'
+import { setDashBoardSearchModalVisible } from '../../actions/index'
+import { connect } from 'react-redux';
 
 const styles = StyleSheet.create({
   header: {
-
     flexDirection: "row",
     alignItems: "flex-start",
     paddingLeft: 10,
@@ -20,6 +19,9 @@ const styles = StyleSheet.create({
   headerText: {
     color: "#eceff1",
     fontSize: 20,
+  },
+  pageContent: {
+    margin:10
   }
 
 });
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
 class DashboardSearchDialogueContainer extends Component {
   render() {
     return (
-      <View style={{marginRight: 10}}>
+      <View>
         <Modal
           animationType={"slide"}
           transparent={false}
@@ -50,21 +52,30 @@ class DashboardSearchDialogueContainer extends Component {
               </TouchableOpacity>
               <Text style={styles.headerText}>Search</Text>
             </View>
-            <View style={{padding: 10}}>
-              <Text>Search for items anywhere in the app</Text>
+            <View>
+              <SearchBar
+                clearIcon
+                lightTheme
+                onChangeText={() => console.log('changed')}
+                placeholder='Search...'
+                containerStyle={{backgroundColor: 'white',
+                                 borderTopWidth: 0,
+                                 borderBottomWidth: 0,}}
+              />
+              <View style={styles.pageContent}>
+                <Text>Search for items anywhere in the app</Text>
+              </View>
             </View>
           </View>
         </Modal>
-        <TouchableOpacity onPress={() => {
-          this.props.displayDashBoardSearchModal()
-        } }>
-          <Icon
-            name="magnify"
-            type="material-community"
-            size={28}
-            color="#eceff1"
-          />
-        </TouchableOpacity>
+        <Avatar
+          small
+          rounded
+          icon={{name: 'search', size:24}}
+          overlayContainerStyle={{backgroundColor: '#757575'}}
+          onPress={() => this.props.displayDashBoardSearchModal()}
+          activeOpacity={0.7}
+        />
       </View>
 
     );
