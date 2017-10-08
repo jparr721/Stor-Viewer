@@ -3,6 +3,7 @@ import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
 import { Card, SmallCard, Header, HeaderButton } from './common';
 import { List, ListItem, Avatar, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
+import { setDashBoardSearchModalVisible } from '../actions';
 
 const styles = StyleSheet.create({
   container: {
