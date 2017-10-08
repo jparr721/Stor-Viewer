@@ -16,17 +16,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    height: null,
+    height: 150,
     width: null,
     borderRadius: 2,
-    flex:1
   },
   backdropView: {
-    height: 150,
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(0,0,0,0.4)',
     borderRadius: 2,
+    position: 'absolute',
   },
   headline: {
     fontSize: 24,
@@ -44,54 +45,48 @@ class Dashboard extends Component {
         </Header>
         <ScrollView>
           <View style={styles.smallCardContainer}>
-
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/pizza.jpg')} style={styles.image}>
-                  <View style={styles.backdropView}>
-                    <Text style={styles.headline}>RECIPES</Text>
-                  </View>
-                </Image>
+                <Image source={require('../images/pizza.jpg')} style={styles.image} />
+                <View style={styles.backdropView}>
+                  <Text style={styles.headline}>RECIPES</Text>
+                </View>
               </SmallCard>
             </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/peppers.jpg')} style={styles.image}>
-                  <View style={styles.backdropView}>
+                <Image source={require('../images/peppers.jpg')} style={styles.image} />
+                <View style={styles.backdropView}>
                     <Text style={styles.headline}>MY LIST</Text>
-                  </View>
-                </Image>
+                </View>
               </SmallCard>
             </TouchableOpacity>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/barbecue.jpg')} style={styles.image}>
-                  <View style={styles.backdropView}>
-                    <Text style={styles.headline}>SHARE</Text>
-                  </View>
-                </Image>
+                <Image source={require('../images/barbecue.jpg')} style={styles.image} />
+                <View style={styles.backdropView}>
+                  <Text style={styles.headline}>SHARE</Text>
+                </View>
               </SmallCard>
             </TouchableOpacity>
           </View>
           <View style={styles.smallCardContainer}>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/apples.jpg')} style={styles.image}>
-                  <View style={styles.backdropView}>
-                    <Text style={styles.headline}>SAVINGS</Text>
-                  </View>
-                </Image>
+                <Image source={require('../images/apples.jpg')} style={styles.image} />
+                <View style={styles.backdropView}>
+                  <Text style={styles.headline}>SAVINGS</Text>
+                </View>
               </SmallCard>
             </TouchableOpacity>
             <TouchableOpacity style ={{flex:1}}>
               <SmallCard>
-                <Image source={require('../images/orange.jpg')} style={styles.image}>
-                  <View style={styles.backdropView}>
-                    <Text style={styles.headline}>STORES</Text>
-                  </View>
-                </Image>
+                <Image source={require('../images/orange.jpg')} style={styles.image} />
+                <View style={styles.backdropView}>
+                  <Text style={styles.headline}>STORES</Text>
+                </View>
               </SmallCard>
             </TouchableOpacity>
           </View>
