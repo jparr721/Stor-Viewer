@@ -13,7 +13,7 @@ class HeaderContainer extends Component {
           small
           rounded
           icon={{name: 'account-circle', size: 24}}
-          overlayContainerStyle={{backgroundColor: '#FFB300'}}
+          overlayContainerStyle={{backgroundColor: '#FFA000'}}
           onPress={() => this.props.displayUserMenu()}
           activeOpacity={0.7}
         />
