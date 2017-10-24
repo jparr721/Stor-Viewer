@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, Dimensions, TouchableHighlight, Text, View, StyleSheet } from 'react-native';
+import { Avatar, Icon } from 'react-native-elements';
 import Camera from 'react-native-camera';
 
 class CameraTab extends Component {
@@ -12,7 +13,16 @@ class CameraTab extends Component {
           }}
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}>
-          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+          <View style={styles.capture}>
+            <Avatar
+              large
+              rounded
+              icon={{name: 'camera', size: 42}}
+              overlayContainerStyle={{backgroundColor: '#FFA000'}}
+              onPress={this.takePicture.bind(this)}
+              activeOpacity={0.7}
+            />
+          </View>
         </Camera>
       </View>
     );
@@ -37,10 +47,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   capture: {
-    flex: 0,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    color: '#000',
     padding: 10,
     margin: 40
   }

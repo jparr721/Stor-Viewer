@@ -4,12 +4,11 @@
 import React, {Component} from 'react';
 import {Modal, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import {Icon} from 'react-native-elements'
-import {setDashboardSettingsModalVisible} from '../../actions/index'
+import {setDashboardSettingsModalVisible} from '../../actions'
 import {connect} from 'react-redux';
 
 const styles = StyleSheet.create({
   header: {
-
     flexDirection: "row",
     alignItems: "flex-start",
     paddingLeft: 10,

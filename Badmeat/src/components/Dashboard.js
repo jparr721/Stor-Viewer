@@ -3,7 +3,9 @@ import { ScrollView, Text, StyleSheet, View, Image, TouchableOpacity } from 'rea
 import { Card, SmallCard, Header } from './common';
 import { DashboardSearchDialogue, DashboardSettingsDialogue, UserMenu } from './popups'
 import { Avatar, Icon  } from 'react-native-elements';
-
+import { setRecipesModalVisible } from '../actions'
+import { connect } from 'react-redux';
+import Recipes from './popups/Recipes'
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
@@ -40,12 +42,13 @@ class Dashboard extends Component {
     return (
       <View style={styles.container}>
         <UserMenu />
+        <Recipes />
         <Header headerText="Dashboard">
           <DashboardSearchDialogue/>
         </Header>
         <ScrollView>
           <View style={styles.smallCardContainer}>
-            <TouchableOpacity style ={{flex:1}}>
+            <TouchableOpacity style ={{flex:1}} onPress={() => {this.props.displayRecipesModal()}}>
               <SmallCard>
                 <Image source={require('../images/pizza.jpg')} style={styles.image} />
                 <View style={styles.backdropView}>
@@ -96,4 +99,16 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return {
+    recipesModalVisible: state.recipesModalVisible
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  displayRecipesModal() {
+    dispatch(setRecipesModalVisible());
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

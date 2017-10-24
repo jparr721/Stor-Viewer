@@ -65,3 +65,9 @@ export const setUserSettingsModalVisible = () => {
     type: 'SET_USER_SETTINGS_MODAL_VISIBLE'
   }
 };
+
+export const setRecipesModalVisible = () => {
+  return {
+    type: 'SET_RECIPES_MODAL_VISIBLE'
+  }
+};

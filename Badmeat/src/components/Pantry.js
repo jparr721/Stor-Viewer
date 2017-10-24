@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#424242',
   },
   viewAllButton: {
-    alignItems: 'center',
     margin: 20,
     flexDirection:'row'
   },
@@ -84,7 +83,7 @@ class PantryContainer extends Component {
 
         <SmallHeader headerText="All Items"/>
         <ScrollView>
-        
+
         </ScrollView>
 
         <View style={styles.viewAllButton}>

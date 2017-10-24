@@ -41,6 +41,7 @@ export const initialState = {
   newEntryModalVisible: false,
   pantrySearchModalVisible: false,
   userSettingsModalVisible: false,
+  recipesModalVisible: false,
   notificationsList: require('../../dummy_data/dummy_notification_data.json'),
 
   expiringFoodItems: pantryData.expiringFood,
@@ -77,6 +78,10 @@ function appReducer(state = initialState, action) {
     case 'SET_USER_SETTINGS_MODAL_VISIBLE':
       return {
         ...state, userSettingsModalVisible: !state.userSettingsModalVisible
+      };
+    case 'SET_RECIPES_MODAL_VISIBLE':
+      return {
+        ...state, recipesModalVisible: !state.recipesModalVisible
       };
     case FETCHING_DATA:
       return {

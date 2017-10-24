@@ -2,14 +2,13 @@
  * Created by deonj on 8/24/2017.
  */
 import React, {Component} from 'react';
-import {Modal, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
-import { Icon, Avatar } from 'react-native-elements'
+import {Modal, TouchableOpacity, View, StyleSheet} from 'react-native';
+import { Icon, Avatar, FormLabel, FormInput, FormValidationMessage, Button, Text } from 'react-native-elements'
 import {setNewEntryModalVisible} from '../../actions/index'
 import {connect} from 'react-redux';
 
 const styles = StyleSheet.create({
   header: {
-
     flexDirection: "row",
     alignItems: "flex-start",
     paddingLeft: 10,
@@ -20,6 +19,13 @@ const styles = StyleSheet.create({
   headerText: {
     color: "#eceff1",
     fontSize: 20,
+  },
+  formStyle: {
+    // styling for input field wrapper.
+  },
+  submitButton: {
+    margin: 20,
+    flexDirection: 'row'
   }
 
 });
@@ -50,8 +56,49 @@ class NewEntryDialogueContainer extends Component {
               </TouchableOpacity>
               <Text style={styles.headerText}>Add a New Entry</Text>
             </View>
-            <View style={{padding: 10}}>
-              <Text>Enter item details or use the camera!</Text>
+            <View style={styles.formStyle}>
+              <FormLabel>NAME</FormLabel>
+              <FormInput onChangeText={console.log("changed")}
+                         underlineColorAndroid='#9E9E9E'
+                         placeholder='Enter the type of food'
+                         />
+              <FormValidationMessage>Error message</FormValidationMessage>
+              <FormLabel>QUANTITY</FormLabel>
+              <FormInput onChangeText={console.log("changed")}
+                         underlineColorAndroid='#9E9E9E'
+                         placeholder='How much did you buy?'
+                         />
+              <FormValidationMessage>Error message</FormValidationMessage>
+              <FormLabel>EXPIRATION DATE</FormLabel>
+              <FormInput onChangeText={console.log("changed")}
+                         underlineColorAndroid='#9E9E9E'
+                         placeholder='When does this item expire?'
+                         />
+              <FormValidationMessage>Error message</FormValidationMessage>
+            </View>
+            <View style={styles.submitButton}>
+              <Button
+                raised
+                icon={{name: 'check'}}
+                onPress={() => console.log("pressed")}
+                title="SUBMIT"
+                containerViewStyle={{flex:1}}
+                backgroundColor='#FFA000'
+              />
+            </View>
+            <View style={{alignItems: 'center'}}>
+              <Text h4>OR</Text>
+            </View>
+            <View style={styles.submitButton}>
+              <Button
+                raised
+                
+                icon={{name: 'camera'}}
+                onPress={() => console.log("pressed")}
+                title='OPEN CAMERA'
+                containerViewStyle={{flex:1}}
+                backgroundColor='#9E9E9E'
+              />
             </View>
           </View>
         </Modal>
