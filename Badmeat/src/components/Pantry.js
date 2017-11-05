@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
 class PantryContainer extends Component {
   render() {
 
-    if (!this.props.viewingAllItems) {
+    if (this.props.viewingAllItems) {
       return (
         <View style={styles.container}>
+
           <Header headerText="Pantry">
             <NewEntryDialogue />
           </Header>
-
           <SearchBar
             round
             clearIcon
@@ -43,10 +43,9 @@ class PantryContainer extends Component {
                              borderBottomWidth: 0,}}
           />
 
-          {/* Expiring food view (May add horizontal scrolling) */}
-          <SmallHeader headerText="Expiring Soon"/>
+          <SmallHeader headerText="All Items"/>
           <ColumnGrid
-            items={this.props.expiringFoodItems}
+            items={this.props.fullPantryItems}
             columns={3}
             vertical={true}
           />
@@ -55,7 +54,7 @@ class PantryContainer extends Component {
             <Button
               raised
               onPress={() => this.props.onViewAllClick()}
-              title="VIEW ALL"
+              title="NEW & OLD"
               containerViewStyle={{flex:1}}
               backgroundColor='#FFA000'
             />
@@ -64,12 +63,15 @@ class PantryContainer extends Component {
       );
     }
 
+
+
+
     return (
       <View style={styles.container}>
-
         <Header headerText="Pantry">
           <NewEntryDialogue />
         </Header>
+
         <SearchBar
           round
           clearIcon
@@ -81,16 +83,23 @@ class PantryContainer extends Component {
                            borderBottomWidth: 0,}}
         />
 
-        <SmallHeader headerText="All Items"/>
-        <ScrollView>
+        {/* Expiring food view (May add horizontal scrolling) */}
+        <SmallHeader headerText="Expiring Soon"/>
 
-        </ScrollView>
+
+        <ColumnGrid
+          items={this.props.expiringFoodItems}
+          columns={3}
+          vertical={true}
+        />
+  
+
 
         <View style={styles.viewAllButton}>
           <Button
             raised
             onPress={() => this.props.onViewAllClick()}
-            title="NEW & OLD"
+            title="VIEW ALL"
             containerViewStyle={{flex:1}}
             backgroundColor='#FFA000'
           />

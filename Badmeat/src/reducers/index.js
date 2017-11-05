@@ -45,7 +45,7 @@ export const initialState = {
   notificationsList: require('../../dummy_data/dummy_notification_data.json'),
 
   expiringFoodItems: pantryData.expiringFood,
-  fullPantryItems: fullPantry,
+  fullPantryItems: pantryData.fullPantry,
   isFetching: false,
   foodList: [],
   error: false

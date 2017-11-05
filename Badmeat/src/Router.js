@@ -80,7 +80,7 @@ const Router = TabNavigator(
   {
     tabBarPosition: 'bottom',
     tabBarComponent: TabBarBottom,
-    animationEnabled: true,
+    animationEnabled: false,
     swipeEnabled: true,
     tabBarOptions: {
 
