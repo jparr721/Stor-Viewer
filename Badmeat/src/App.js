@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import firebase from 'firebase';
 import Router from './Router';
+import Login from './components/Login';
+import { connect } from 'react-redux';
 
 class App extends Component {
   componentWillMount() {
@@ -19,9 +22,17 @@ class App extends Component {
 
   render() {
     return (
-        <Router />
-    );
+    <View style={{flex:1}}>
+      { this.props.loggedIn ? <Router /> : <Login /> }
+    </View>
+  );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  const { loggedIn } = state;
+
+  return { loggedIn };
+};
+
+export default connect(mapStateToProps)(App);

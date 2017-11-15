@@ -48,7 +48,14 @@ export const initialState = {
   fullPantryItems: pantryData.fullPantry,
   isFetching: false,
   foodList: [],
-  error: false
+
+  email: '',
+  password: '',
+  error: '',
+  pantryLoadFailureMessage: '',
+  user: null,
+  loading: false,
+  loggedIn: false,
 };
 
 
@@ -82,6 +89,57 @@ function appReducer(state = initialState, action) {
     case 'SET_RECIPES_MODAL_VISIBLE':
       return {
         ...state, recipesModalVisible: !state.recipesModalVisible
+      };
+    case 'LOGIN':
+      return {
+        ...state,
+        loading: true,
+        error: '',
+      };
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        email: '',
+        password: '',
+        error: '',
+        loggedIn: true,
+        loading: false,
+        user: action.payload,
+      };
+    case 'LOGIN_FAIL':
+      return {
+        ...state,
+        error: 'Email or Password is Incorrect',
+        password: '',
+        loggedIn: false,
+        loading: false,
+      };
+    case 'EMAIL_FIELD_CHANGED':
+      return {
+        ...state,
+        email: action.payload,
+      };
+    case 'PASSWORD_FIELD_CHANGED':
+      return {
+        ...state,
+        password: action.payload,
+      };
+    case 'LOAD_PANTRY':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'LOAD_PANTRY_SUCCESS':
+      return {
+        ...state,
+        pantryLoadFailureMessage: '',
+        loading: false,
+      };
+    case 'LOAD_PANTRY_FAILURE':
+      return {
+          ...state,
+          pantryLoadFailureMessage: 'Could not load food. Check connection!',
+          loading: false,
       };
     case FETCHING_DATA:
       return {

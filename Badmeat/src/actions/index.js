@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+import { api } from '../util'
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE} from '../../constants'
 
 export function fetchDataFromAPI() {
@@ -71,3 +73,81 @@ export const setRecipesModalVisible = () => {
     type: 'SET_RECIPES_MODAL_VISIBLE'
   }
 };
+
+export const loginFail = (dispatch) => {
+  dispatch({ type: 'LOGIN_FAIL' });
+};
+
+export const loginSuccess = (dispatch, user) => {
+  dispatch({
+    type: 'LOGIN_SUCCESS',
+    payload: user
+  });
+};
+
+export const getEmailInput = (data) => {
+  return {
+    type: 'EMAIL_FIELD_CHANGED',
+    payload: data,
+    // console.log(data),
+  };
+};
+
+export const getPasswordInput = (data) => {
+  return {
+    type: 'PASSWORD_FIELD_CHANGED',
+    payload: data,
+    // console.log(data),
+  };
+};
+
+export const login = (email, password) => {
+  return (dispatch) => {
+    dispatch({ type: 'LOGIN' });
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(user => loginSuccess(dispatch, user))
+      .catch((error) => {
+        console.log(error);
+
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(user => loginSuccess(dispatch, user))
+          .catch(() => loginFail(dispatch))
+      });
+  };
+};
+
+export const loadPantry = () => {
+  return (dispatch) => {
+    dispatch({ type: 'LOGIN' });
+
+    api.get('/food')
+      .then((data) => {
+        console.log(data)
+        for (key in data.data) {
+          if (data.data.hasOwnProperty(key)) {
+            storeFoodItemFromApi(data.data[key])
+          }
+        }
+      })
+      .catch((error) => {
+        console.console.log(data);
+        alert(error);
+      });
+  }
+}
+
+export const loadPantrySuccess = (dispatch) => {
+  dispatch({ type: 'LOAD_PANTRY_SUCCESS' });
+}
+
+export const loadPantryFailure = (dispatch) => {
+  dispatch({ type: 'LOAD_PANTRY_FAILURE' });
+}
+
+export const storeFoodItemFromApi = (item) => {
+  return {
+    type: 'STORE_FOOD_ITEM_FROM_API',
+    payload: item,
+  }
+}
