@@ -42,6 +42,7 @@ export const initialState = {
   pantrySearchModalVisible: false,
   userSettingsModalVisible: false,
   recipesModalVisible: false,
+  createAccountModalVisible: false,
   notificationsList: require('../../dummy_data/dummy_notification_data.json'),
 
   expiringFoodItems: pantryData.expiringFood,
@@ -56,6 +57,12 @@ export const initialState = {
   user: null,
   loading: false,
   loggedIn: false,
+  newEntryType: '',
+  newEntryUnits: '',
+  newEntryName: '',
+  newEntryQuantity: '',
+  newEntryNameError: 'test',
+  newEntryQuantityError: 'test',
 };
 
 
@@ -89,6 +96,10 @@ function appReducer(state = initialState, action) {
     case 'SET_RECIPES_MODAL_VISIBLE':
       return {
         ...state, recipesModalVisible: !state.recipesModalVisible
+      };
+    case 'SET_CREATE_ACCOUNT_MODAL_VISIBLE':
+      return {
+        ...state, createAccountModalVisible: !state.createAccountModalVisible
       };
     case 'LOGIN':
       return {
@@ -141,23 +152,31 @@ function appReducer(state = initialState, action) {
           pantryLoadFailureMessage: 'Could not load food. Check connection!',
           loading: false,
       };
-    case FETCHING_DATA:
+    case 'STORE_FOOD_ITEM_FROM_API':
       return {
         ...state,
-        isFetching: true,
-        foodList: []
+        foodList: [...state.foodList, action.payload]
+
       };
-    case FETCHING_DATA_SUCCESS:
+    case 'UPDATE_NEW_ENTRY_TYPE':
       return {
         ...state,
-        isFetching: false,
-        foodList: action.data
+        newEntryType: action.payload,
       };
-    case FETCHING_DATA_FAILURE:
+    case 'UPDATE_NEW_ENTRY_UNITS':
       return {
         ...state,
-        isFetching: false,
-        error: true
+        newEntryUnits: action.payload,
+      };
+    case 'UPDATE_NEW_ENTRY_NAME':
+      return {
+        ...state,
+        newEntryName: action.payload,
+      };
+    case 'UPDATE_NEW_ENTRY_QUANTITY':
+      return {
+        ...state,
+        newEntryQuantity :action.payload,
       };
     default:
       return state;

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Modal, ScrollView } from 'react-native';
+import { StyleSheet, View, Modal, ScrollView } from 'react-native';
 import { Header, SmallHeader, ColumnGrid, SmallCard } from './common';
 import { connect } from 'react-redux';
-import { toggleViewAll } from '../actions'
+import { toggleViewAll, loadPantry, storeFoodItemFromApi } from '../actions'
 import { NewEntryDialogue, PantrySearchDialogue } from "./popups/";
-import { SearchBar, Button } from 'react-native-elements';
-
+import { SearchBar, Button, Text } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,8 +22,12 @@ const styles = StyleSheet.create({
 });
 
 class PantryContainer extends Component {
+   // Call the API to gather entries.
+   componentWillMount() {
+     this.props.loadFood();
+   }
   render() {
-
+    console.log(this.props.food);
     if (this.props.viewingAllItems) {
       return (
         <View style={styles.container}>
@@ -45,7 +48,7 @@ class PantryContainer extends Component {
 
           <SmallHeader headerText="All Items"/>
           <ColumnGrid
-            items={this.props.fullPantryItems}
+            items={this.props.food}
             columns={3}
             vertical={true}
           />
@@ -88,12 +91,10 @@ class PantryContainer extends Component {
 
 
         <ColumnGrid
-          items={this.props.expiringFoodItems}
+          items={this.props.food}
           columns={3}
           vertical={true}
         />
-  
-
 
         <View style={styles.viewAllButton}>
           <Button
@@ -114,6 +115,7 @@ const mapStateToProps = (state) => {
     viewingAllItems: state.viewingAllItems,
     expiringFoodItems: state.expiringFoodItems,
     fullPantryItems: state.fullPantryItems,
+    food: state.foodList,
   };
 };
 
@@ -121,6 +123,12 @@ const mapDispatchToProps = (dispatch) => ({
   onViewAllClick() {
     dispatch(toggleViewAll());
   },
+  loadFood() {
+    dispatch(loadPantry());
+  },
+  storeFoodItemFromApi(item) {
+    dispatch(storeFoodItemFromApi(item));
+  }
 
 });
 

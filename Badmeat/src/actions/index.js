@@ -1,36 +1,5 @@
 import firebase from 'firebase';
-import { api } from '../util'
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE} from '../../constants'
-
-export function fetchDataFromAPI() {
-  return (dispatch) => {
-    dispatch(getData());
-    fetch('https://young-garden-40398.herokuapp.com/food')
-      .then(res => res.json())
-      .then(json => dispatch(getDataSuccess()))
-      .catch(err => dispatch(getDataFailure(err)));
-  }
-}
-
-function getData() {
-  return {
-    type: FETCHING_DATA
-  };
-}
-
-function getDataSuccess(data) {
-  return {
-    type: FETCHING_DATA_SUCCESS,
-    data
-  };
-}
-
-function getDataFailure() {
-  return {
-    type: FETCHING_DATA_FAILURE
-  }
-}
-
+import axios from 'axios';
 
 export const toggleViewAll  = () => {
   return {
@@ -74,6 +43,12 @@ export const setRecipesModalVisible = () => {
   }
 };
 
+export const setCreateAccountModalVisible = () => {
+  return {
+    type: 'SET_CREATE_ACCOUNT_MODAL_VISIBLE'
+  }
+}
+
 export const loginFail = (dispatch) => {
   dispatch({ type: 'LOGIN_FAIL' });
 };
@@ -89,7 +64,6 @@ export const getEmailInput = (data) => {
   return {
     type: 'EMAIL_FIELD_CHANGED',
     payload: data,
-    // console.log(data),
   };
 };
 
@@ -97,7 +71,6 @@ export const getPasswordInput = (data) => {
   return {
     type: 'PASSWORD_FIELD_CHANGED',
     payload: data,
-    // console.log(data),
   };
 };
 
@@ -119,35 +92,89 @@ export const login = (email, password) => {
 
 export const loadPantry = () => {
   return (dispatch) => {
-    dispatch({ type: 'LOGIN' });
+    dispatch({ type: 'LOAD_PANTRY' });
 
-    api.get('/food')
+    axios.get('http://104.236.200.91/index.php/food')
       .then((data) => {
-        console.log(data)
+        dispatch(loadPantrySuccess())
         for (key in data.data) {
-          if (data.data.hasOwnProperty(key)) {
-            storeFoodItemFromApi(data.data[key])
-          }
+            dispatch(storeFoodItemFromApi(data.data[key]));
         }
       })
       .catch((error) => {
-        console.console.log(data);
-        alert(error);
+        dispatch(loadPantryFailure(error));
+        console.log(error);
+        //alert(error);
       });
   }
 }
 
-export const loadPantrySuccess = (dispatch) => {
-  dispatch({ type: 'LOAD_PANTRY_SUCCESS' });
+export const loadPantrySuccess = () => {
+  return {
+    type: 'LOAD_PANTRY_SUCCESS'
+  };
 }
 
-export const loadPantryFailure = (dispatch) => {
-  dispatch({ type: 'LOAD_PANTRY_FAILURE' });
+export const loadPantryFailure = (errorh) => {
+  return {
+    type: 'LOAD_PANTRY_FAILURE'
+  };
 }
 
 export const storeFoodItemFromApi = (item) => {
   return {
     type: 'STORE_FOOD_ITEM_FROM_API',
     payload: item,
-  }
+  };
+}
+
+export const newEntry = (config) => {
+  return (dispatch) => {
+    dispatch({ type: 'NEW_ENTRY' });
+    // This ain't working yet. Don't get your hopes up.
+    axios.post('http://104.236.200.91/index.php/food', {
+        name: 'watermelon',
+        quantity: '3',
+        units: 'oz',
+        type: 'Fruit',
+        user: 'test@gmnail.com',
+        expiresOn: '2017-15-04',
+      })
+      .then((response) => {
+        console.log(response);
+        alert(response);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+      });
+  };
+}
+
+export const updateNewEntryType = (selection) => {
+  return {
+    type: 'UPDATE_NEW_ENTRY_TYPE',
+    payload: selection,
+  };
+}
+
+export const updateNewEntryUnits = (selection) => {
+  return {
+    type: 'UPDATE_NEW_ENTRY_UNITS',
+    payload: selection,
+  };
+}
+
+export const updateNewEntryName = (input) => {
+  return {
+    type: 'UPDATE_NEW_ENTRY_NAME',
+    payload: input,
+  };
+}
+
+export const updateNewEntryQuantity = (input) => {
+  return {
+    type: 'UPDATE_NEW_ENTRY_QUANTITY',
+    payload: input,
+  };
 }

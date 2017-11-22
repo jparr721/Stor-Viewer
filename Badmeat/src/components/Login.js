@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Button, Text } from 'react-native-elements';
-import { getEmailInput, getPasswordInput, login } from '../actions';
+import { getEmailInput, getPasswordInput, login, setCreateAccountModalVisible } from '../actions';
 import { Header, Spinner, Card  } from './common';
+import  CreateAccount  from './popups/CreateAccount'
 import  Router  from '../Router';
 
 class Login extends Component {
@@ -27,10 +28,11 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.pageContent}>
+        <CreateAccount />
         <Image source={require('../images/fooood.png')} style={styles.image} />
         <View style={styles.backdropView}>
           <View style={styles.logo}>
-            <Text h1 style={{color:'#F9be02' }}>Badmeat</Text>
+            <Text h1 style={{color:'#F9be02'}}>Badmeat</Text>
           </View>
           <View style={styles.loginBox}>
             <Card style= {styles.cardAdjustments}>
@@ -59,13 +61,14 @@ class Login extends Component {
               <Text style={styles.errorTextStyle}>
                 {this.props.error}
               </Text>
-              
+
             </Card>
             <View style={{marginRight:20, marginLeft:20}}>
                 {this.renderButton()}
             </View>
-            <View style={styles.createAccount}>
-              <TouchableOpacity>
+            <View style={styles.createAccountAndForgotPassword}>
+              <TouchableOpacity
+                onPress={() => this.props.displayCreateAccount()}>
                 <Text style={styles.createAccount}>Create Account</Text>
               </TouchableOpacity>
               <Text style={styles.createAccount}>  |  </Text>
@@ -135,11 +138,13 @@ const styles = {
     position: 'absolute',
   },
   createAccount: {
+    color: '#7cdbd5'
+  },
+  createAccountAndForgotPassword: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop:10,
     alignItems: 'center',
-    color: '#7cdbd5'
+    marginTop:20,
   }
 };
 
@@ -158,6 +163,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onPasswordChange(text) {
     dispatch(getPasswordInput(text));
+  },
+  displayCreateAccount() {
+    dispatch(setCreateAccountModalVisible());
   }
 });
 

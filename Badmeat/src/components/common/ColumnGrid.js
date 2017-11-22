@@ -12,8 +12,14 @@ const styles = StyleSheet.create({
   },
   headline: {
     color: 'white',
+    fontSize:16,
+  },
+  expiration: {
+    color: '#7cdbd5',
+    fontSize:12,
   },
   headlineContainer: {
+    flexWrap: 'wrap',
     alignItems: 'center',
     padding: 5,
   },
@@ -29,11 +35,12 @@ class ColumnGrid extends Component {
           <View style={styles.grid}>
             {
               this.props.items.map((item,i) => (
-              <SizedTile>
+              <SizedTile key={i}>
                 <View style={styles.tileContent}>
                   <Icon name='food' color='white' type="material-community" size={40}/>
                   <View style={styles.headlineContainer}>
                     <Text style={styles.headline}>{item.name}</Text>
+                    <Text style={styles.expiration}>Expires: {item.expiresOn.substring(5,11)}</Text>
                   </View>
                 </View>
               </SizedTile>
