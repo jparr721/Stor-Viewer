@@ -22,4 +22,4 @@ Badmeat is a food management and e-pantry app that will allow you to quickly, an
 
 
 
-*A Sphynx Software Group Product*
+*Unified*
