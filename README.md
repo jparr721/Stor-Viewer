@@ -9,7 +9,7 @@ Stor-Viewer is a food management and e-pantry app that will allow you to quickly
 
 
 # TODO's
-- [] Rebuild existing application to fit new infrastructure needs.
+- [ ] Rebuild existing application to fit new infrastructure needs.
 
 
 
