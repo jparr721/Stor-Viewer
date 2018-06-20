@@ -1,7 +1,7 @@
 # Stor-Viewer v0.1.0 
 
 ## DEPRECATED
-This code was a good open source learning experience for my friends and I, but it is now being built and maintained in a super secret repo for intellectual property and other hacking related reasons. The code will stay up as a reference, but it's probably not the best example for some things.
+This code was a good open source learning experience for my friends and I. However, it is now being built and maintained in a super secret repo for intellectual property and other security related reasons. The code will stay up as a reference, but it's probably not the best example for some things.
 
 ## Welcome to the Stor Viewer!
 
